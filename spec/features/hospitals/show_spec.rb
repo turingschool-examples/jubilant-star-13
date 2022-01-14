@@ -12,7 +12,7 @@ RSpec.describe 'the hospital show page' do
     dr_6 = hosp_2.doctors.create!(name: "Dr. 6", specialty: "Specialty 3", university: "University 5")
 
     visit "/hospitals/#{hosp_1.id}"
-    save_and_open_page
+
     expect(page).to have_content(hosp_1.name)
     expect(page).to have_content("Number of doctors that work at hospital: 4")
     expect(page).to have_content("These doctors have attended these universities: University 1, University 2, University 3")
