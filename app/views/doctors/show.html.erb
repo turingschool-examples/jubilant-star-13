@@ -1,4 +1,9 @@
-<%= @doctor.name %>
-<%= @doctor.specialty %>
-<%= @doctor.university %>
-<%= @doctor.hospital.name %>
+<h1><%= @doctor.name %></h1>
+<p><%= @doctor.specialty %></p>
+<p><%= @doctor.university %></p>
+<p><%= @doctor.hospital.name %></p>
+
+<h3>Doctor's Patients:</h3>
+<% @doctor.patients.each do |patient| %>
+  <p><%= patient.name %></p>
+<%end  %>

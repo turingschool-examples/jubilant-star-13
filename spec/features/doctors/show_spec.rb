@@ -19,7 +19,7 @@ RSpec.describe 'Doctor Show Page' do
       DoctorPatient.create!(doctor_id: @doctor_1.id, patient_id: @patient_1.id)
       DoctorPatient.create!(doctor_id: @doctor_1.id, patient_id: @patient_2.id)
       DoctorPatient.create!(doctor_id: @doctor_1.id, patient_id: @patient_3.id)
-      
+
       DoctorPatient.create!(doctor_id: @doctor_2.id, patient_id: @patient_4.id)
       DoctorPatient.create!(doctor_id: @doctor_2.id, patient_id: @patient_5.id)
     end
@@ -47,8 +47,14 @@ RSpec.describe 'Doctor Show Page' do
       expect(page).to_not have_content(@hospital_2.name)
     end
 
-    xit 'shows the names of all the doctors patients' do
+    it 'shows the names of all the doctors patients' do
       visit "doctors/#{@doctor_1.id}"
+
+      expect(page).to have_content(@patient_1.name)
+      expect(page).to have_content(@patient_2.name)
+      expect(page).to have_content(@patient_3.name)
+      expect(page).to_not have_content(@patient_4.name)
+      expect(page).to_not have_content(@patient_5.name)
     end
   end
 end
