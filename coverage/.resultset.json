@@ -252,9 +252,9 @@
         "lines": [
           1,
           1,
-          27,
-          27,
-          21,
+          39,
+          39,
+          29,
           1,
           null,
           null
@@ -264,7 +264,7 @@
         "lines": [
           1,
           1,
-          15,
+          20,
           null,
           null
         ]
@@ -274,7 +274,7 @@
           1,
           1,
           1,
-          2,
+          8,
           null,
           1,
           null,
@@ -283,7 +283,7 @@
           null,
           null,
           1,
-          0,
+          6,
           null,
           null,
           null,
@@ -309,6 +309,67 @@
           null
         ]
       },
+      "/Users/lelandcurtis/turing/2mod/jubilant-star-13/spec/features/hospitals/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/lelandcurtis/turing/2mod/jubilant-star-13/spec/models/doctor_patient_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/lelandcurtis/turing/2mod/jubilant-star-13/app/models/doctor_patient.rb": {
         "lines": [
           1,
@@ -317,7 +378,7 @@
           1,
           null,
           1,
-          1,
+          9,
           null,
           null,
           null
@@ -362,7 +423,7 @@
           1,
           null,
           1,
-          1,
+          6,
           null,
           null
         ]
@@ -424,11 +485,11 @@
           1,
           null,
           1,
-          4,
+          7,
           null,
           null,
           1,
-          3,
+          6,
           null,
           null
         ]
@@ -452,8 +513,72 @@
           1,
           null
         ]
+      },
+      "/Users/lelandcurtis/turing/2mod/jubilant-star-13/app/controllers/doctors_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/lelandcurtis/turing/2mod/jubilant-star-13/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/lelandcurtis/turing/2mod/jubilant-star-13/app/controllers/doctor_patients_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/lelandcurtis/turing/2mod/jubilant-star-13/app/controllers/hospitals_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1642184998
+    "timestamp": 1642185158
   }
 }
