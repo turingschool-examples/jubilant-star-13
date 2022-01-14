@@ -29,6 +29,14 @@ RSpec.describe "Doctor show page", type: :feature do
   end
 
   it "has the name of the hospital where this doctor works" do 
+    @hospital1 = Hospital.create!(name: "Grey Sloan Memorial Hospital")
+
+    @doctor1 = Doctor.create!(name: "Meredith Grey", specialty: "General Surgery", university: "Harvard University", hospital_id: @hospital1.id)
+    @doctor2 = Doctor.create!(name: "Alex Karev", specialty: "Pediatrics", university: "Washington State University", hospital_id: @hospital1.id)
+
+    visit doctor_path(@doctor1)
+
+    expect(page).to have_content("Hospital: Grey Sloan Memorial Hospital")
   end
 
   it "has the names of all the patients for this doctor"
