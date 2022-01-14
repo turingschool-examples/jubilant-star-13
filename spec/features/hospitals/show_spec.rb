@@ -29,7 +29,7 @@ RSpec.describe "Hospital Show Page" do
   end
 
   scenario 'visitor sees the number of doctors that work there' do
-    expect(page).to have_content(Doctor.total_number)
+    expect(page).to have_content(@hospital_1.total_doctors)
   end
 
   scenario 'visitor sees a unique list of unviersities that its doctors attended' do
