@@ -12,7 +12,7 @@
   <% @doctor.patients.each do |patient| %>
     <li><%= patient.name %>, <%= patient.age %></li>
 
-    <p><%= button_to "Remove #{patient.name} from Doctor Caseload", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete %></p>
+    <p><%= button_to "Remove #{patient.name} from Doctor Caseload", "/doctors/#{@doctor.id}/doctor_patients/#{patient.id}", method: :delete %></p>
     
     <% end %>
 </div>
