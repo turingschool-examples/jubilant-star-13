@@ -41,6 +41,7 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'pry'
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
