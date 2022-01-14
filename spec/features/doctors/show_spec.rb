@@ -33,5 +33,11 @@ describe 'doctor show page' do
   it 'I see the names of all of the patients this doctor has' do
     expect(page).to have_content("Patients: #{@patient1.name} #{@patient2.name} #{@patient3.name}")
     expect(page).to_not have_content(@patient4.name)
-  end 
+  end
+
+  it 'Next to each patients name, I see a button to remove that patient from that doctors caseload' do
+    click_button("Remove #{@patient1.name}")
+    expect(current_path).to eq("/doctors/#{@bailey.id}")
+    expect(page).to_not have_content(@patient1.name)
+  end
 end
