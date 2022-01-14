@@ -3,5 +3,5 @@
 <p><%= @doctor.university %></p>
 <p><%= @doctor.hospital.name %></p>
 <% @doctor.patients.each do |patient| %>
-<%= patient.name %>
+<%= patient.name %><%= button_to "remove #{patient.name}", doctor_patient_path(@doctor.id, patient_id: patient.id), method: :delete %>
 <% end %>
