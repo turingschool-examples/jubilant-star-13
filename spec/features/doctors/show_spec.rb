@@ -51,12 +51,18 @@ RSpec.describe "Doctor show page", type: :feature do
     patient2 = Patient.create!(name: "Henry Collins", age: 40)
     doctor2.patients << patient2
 
-    visit doctor_path(doctor2)
+    patient3 = Patient.create!(name: "Amber Hatch", age: 18)
+    doctor1.patients << patient3
 
+    visit doctor_path(doctor2)
+    
     within ".doctor-#{doctor2.id}-patients" do
       expect(page).to have_content("Derek Shepherd, 38")
       expect(page).to have_content("Henry Collins, 40")
     end
+
+    expect(page).to_not have_content("Amber Hatch, 18")
+
   end
 
 end
