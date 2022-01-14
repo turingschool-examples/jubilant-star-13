@@ -40,17 +40,30 @@ RSpec.describe 'Doctors Show Page' do
   end
 
   scenario 'visitor sees names of all patients associated with doctor' do
-    expect(page).to have_content(@patient_1.name)
-    expect(page).to have_content(@patient_2.name)
-    expect(page).to have_content(@patient_3.name)
-    expect(page).to_not have_content(@patient_4.name)
+    within "#names" do
+      expect(page).to have_content(@patient_1.name)
+      expect(page).to have_content(@patient_2.name)
+      expect(page).to have_content(@patient_3.name)
+      expect(page).to_not have_content(@patient_4.name)
+    end
   end
 
   scenario 'visitor sees button to remove patient from doctor caseload next to each patient name' do
     expect(page).to have_content(@patient_1.name)
-    
-    click_button "Remove #{@patient_1.name}"
-    expect(current_path).to eq(doctor_path(@doctor_1.id))
+
+    within "#patient-#{@patient_1.id}" do
+      click_button "Remove #{@patient_1.name}"
+    end
+
+    within "#patient-#{@patient_2.id}" do
+      expect(page).to have_button("Remove #{@patient_2.name}")
+    end
+
+    within "#patient-#{@patient_3.id}" do
+      expect(page).to have_button("Remove #{@patient_3.name}")
+    end
+
     expect(page).to_not have_content(@patient_1.name)
+    expect(current_path).to eq(doctor_path(@doctor_1.id))
   end
 end

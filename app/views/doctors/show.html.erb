@@ -4,6 +4,10 @@
 <p>University: <%= @doctor.university %></p>
 <p>Hospital of employment: <%= @doctor.employer %></p>
 <p>Patients under <%= @doctor.name %>'s care:</p>
+<section id="names">
 <% @patients.each do |patient| %>
+  <div id="patient-<%=patient.id%>">
   <li><%=patient.name%> - <%= button_to "Remove #{patient.name}", doctor_path(@doctor.id), method: :delete, params: {patient_id: patient.id}%><br></li>
+  </div>
 <% end %>
+</section>
