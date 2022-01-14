@@ -1,0 +1,10 @@
+<div class="patients">
+  <h1>Patients - </h1>
+  <ol>
+    <% @patients.order_by_age.each do |patient| %>
+      <div class="patient-<%= patient.id %>">
+        <li><%= patient.name %></li>
+      </div>
+    <% end %>
+  </ol>
+</div>
