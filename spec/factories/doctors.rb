@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :doctor do
-    name {"Default Doctor Name"}
+    sequence(:name) {|n|"Default Doctor Name #{n}"}
     specialty {"Default Speciality"}
     university {"Default University"}
     hospital

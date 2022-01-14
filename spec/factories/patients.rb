@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :patient do
-    name { "Default Patient Name" }
+    sequence(:name) { |n| "Default Patient Name #{n}" }
     age { 17 }
 
     factory :patient_with_doctor do
