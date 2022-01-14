@@ -21,7 +21,7 @@ RSpec.describe 'the doctors show page' do
     dr_1.patients << pat_2
 
     visit "/doctors/#{dr_1.id}"
-    
+
     expect(page).to have_content(dr_1.name)
     expect(page).to have_content(dr_1.specialty)
     expect(page).to have_content(dr_1.university)
@@ -32,5 +32,27 @@ RSpec.describe 'the doctors show page' do
     expect(page).to have_content(pat_1.name)
     expect(page).to have_content(pat_2.name)
     expect(page).to_not have_content(pat_3.name)
+  end
+
+  it 'has a button to remove a patient from a doctors caseload' do
+    hosp_1 = Hospital.create!(name: "Hospital 1")
+    hosp_2 = Hospital.create!(name: "Hospital 2")
+    dr_1 = hosp_1.doctors.create!(name: "Dr. 1", specialty: "Specialty 1", university: "University 1")
+    pat_1 = Patient.create!(name: "Patient 1", age: 34)
+    pat_2 = Patient.create!(name: "Patient 2", age: 32)
+    dr_1.patients << pat_1
+    dr_1.patients << pat_2
+
+    visit "/doctors/#{dr_1.id}"
+
+    expect(page).to have_content(pat_1.name)
+    expect(page).to have_content(pat_2.name)
+    save_and_open_page
+    click_on("Delete #{pat_1.name}")
+
+    expect(current_path).to eq("/doctors/#{dr_1.id}")
+
+    expect(page).to have_content(pat_2.name)
+    expect(page).to_not have_content(pat_1.name)
   end
 end
