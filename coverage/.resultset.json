@@ -422,7 +422,7 @@
           1,
           null,
           1,
-          7,
+          9,
           null,
           null,
           null
@@ -467,7 +467,7 @@
           1,
           null,
           1,
-          5,
+          6,
           null,
           null
         ]
@@ -580,13 +580,13 @@
           1,
           null,
           1,
-          4,
+          5,
           null,
           null,
           1,
           null,
           1,
-          4,
+          5,
           null,
           null,
           null
@@ -595,6 +595,30 @@
       "/Users/lelandcurtis/turing/2mod/jubilant-star-13/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/lelandcurtis/turing/2mod/jubilant-star-13/app/controllers/doctor_patients_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
           null
         ]
       },
@@ -634,6 +658,6 @@
         ]
       }
     },
-    "timestamp": 1642186274
+    "timestamp": 1642186479
   }
 }

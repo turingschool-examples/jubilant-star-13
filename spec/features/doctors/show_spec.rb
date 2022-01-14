@@ -44,8 +44,8 @@ RSpec.describe 'doctor show page' do
     patient_3 = create(:patient_with_doctor, name: "Charlie", doctor: doctor)
 
     visit(doctor_path(doctor))
-  
-    within "div.doctor_patient_#{patient_2.id}" do
+
+    within "div.doctor_patient_#{patient_2.doctor_patients.first.id}" do
       click_button "Remove Patient"
     end
 
