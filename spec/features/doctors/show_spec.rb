@@ -3,16 +3,16 @@ require 'rails_helper'
 describe 'doctor show page' do
   before(:each) do
     @hospital_1 = Hospital.create!(name: 'hospital_1')
-    @doctor_1 = Doctor.create!(name: 'doctor_1', specialty: 'specialty_1', university: 'university_1', hospital_id: hospital_1.id)
-    @doctor_2 = Doctor.create!(name: 'doctor_2', specialty: 'specialty_2', university: 'university_2', hospital_id: hospital_1.id)
+    @doctor_1 = Doctor.create!(name: 'doctor_1', specialty: 'specialty_1', university: 'university_1', hospital_id: @hospital_1.id)
+    @doctor_2 = Doctor.create!(name: 'doctor_2', specialty: 'specialty_2', university: 'university_2', hospital_id: @hospital_1.id)
 
     @patient_1 = Patient.create!(name: 'patient_1', age: 20)
     @patient_2 = Patient.create!(name: 'patient_2', age: 21)
     @patient_3 = Patient.create!(name: 'patient_2', age: 21)
 
-    DoctorPatient.create!(doctor_id: doctor_1.id, patient_id: patient_1.id)
-    DoctorPatient.create!(doctor_id: doctor_1.id, patient_id: patient_2.id)
-    DoctorPatient.create!(doctor_id: doctor_2.id, patient_id: patient_3.id)
+    DoctorPatient.create!(doctor_id: @doctor_1.id, patient_id: @patient_1.id)
+    DoctorPatient.create!(doctor_id: @doctor_1.id, patient_id: @patient_2.id)
+    DoctorPatient.create!(doctor_id: @doctor_2.id, patient_id: @patient_3.id)
   end
 
   it "lists doctor info and patient names" do
