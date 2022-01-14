@@ -13,8 +13,8 @@
   <% @doctor.doctor_patients.each do |doctor_patient|%>
     <div class=<%= "doctor_patient_#{doctor_patient.id}" %>>
       <p><%= "Patient Name: #{doctor_patient.patient_name}" %></p>
-      <% form_with model: [doctor_patient], method: :delete, local: true do |f| %>
-        f.submit
+      <%= form_with model: [doctor_patient], method: :delete, local: true do |f| %>
+        <%= f.submit 'Remove Patient' %>
       <% end %>
     </div>
 
