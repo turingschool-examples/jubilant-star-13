@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Patient, type: :model do
+RSpec.describe 'patients index page' do
   let!(:hospital_1) { Hospital.create!(name: "Arkham Hospital")}
   let!(:hospital_2) { Hospital.create!(name: "Metropolis")}
 
@@ -16,15 +16,12 @@ RSpec.describe Patient, type: :model do
   let!(:doctor_patient_2) {DoctorPatient.create!(patient_id: patient_2.id, doctor_id: doctor_1.id)}
   let!(:doctor_patient_3) {DoctorPatient.create!(patient_id: patient_3.id, doctor_id: doctor_2.id)}
   let!(:doctor_patient_4) {DoctorPatient.create!(patient_id: patient_4.id, doctor_id: doctor_2.id)}
-  
-  describe 'relationships' do 
-    it {should have_many(:doctor_patients)}
-    it {should have_many(:doctors).through(:doctor_patients)}
-  end
 
-  describe 'class methods' do 
-    it 'returns patient names in descending order by age' do 
-      expect(Patient.order_names_by_age_desc).to eq([patient_2.name, patient_1.name, patient_4.name, patient_3.name])
-    end
+  it 'lists patients from oldest to youngest' do 
+    visit "/patients"
+
+    expect(patient_2.name).to appear_before(patient_1.name)
+    expect(patient_1.name).to appear_before(patient_4.name)
+    expect(patient_4.name).to appear_before(patient_3.name)
   end
 end
