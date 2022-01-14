@@ -23,7 +23,7 @@ RSpec.describe 'Hospital Show Page' do
       visit "hospitals/#{@hospital_1.id}"
 
       expect(page).to have_content(@hospital_1.name)
-      expect(page).to have_content("Number of doctors at this hospital: 4")
+      expect(page).to have_content("Number of doctors that work at this hospital: 4")
     end
 
     it 'shows unique list of universities that this hospitals doctors attended' do
