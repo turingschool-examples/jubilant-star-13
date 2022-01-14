@@ -1,2 +1,6 @@
 <%= @hospital.name %>
 <p>Number of Doctor's: <%= @hospital.doctors.count %></p>
+
+<% @hospital.doctors.each do |doctor| %>
+  <p>Universities: <%= doctor.university %></p>
+<% end %>

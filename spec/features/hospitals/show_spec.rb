@@ -26,12 +26,19 @@ RSpec.describe "Hospital Show Page" do
   end
 
   it "shows a unique list of universities that this hospital's doctors attended" do
+    sloans = Hospital.create!({name: "Grey Sloan Memorial Hospital"})
+    other = Hospital.create!({name: "The Other Hospital"})
+
+    miranda = sloans.doctors.create!({name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University"})
+    derrick = sloans.doctors.create!({name: "Derrick Shepard", specialty: "Brain Surgery", university: "Harvard University"})
+    christina = sloans.doctors.create!({name: "Christina Yang", specialty: "Heart Surgery", university: "Columbia University"})
+    george = other.doctors.create!({name: "George O'Malley", specialty: "Foot Surgery", university: "Brown University"})
+
+    visit "/hospitals/#{sloans.id}"
+
+    expect(page).to have_content(miranda.university)
+    expect(page).to have_content(derrick.university)
+    expect(page).to have_content(christina.university)
+    expect(page).to_not have_content(george.university)
   end
 end
-# User Story 2, Hospital Show Page
-# ​
-# As a visitor
-# When I visit a hospital's show page
-# I see the hospital's name
-# And I see the number of doctors that work at this hospital
-# And I see a unique list of universities that this hospital's doctors attended
