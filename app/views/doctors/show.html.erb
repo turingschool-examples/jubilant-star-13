@@ -6,6 +6,10 @@
 <h2>Patients List:</h2>
 <ul>
   <% @doc.patients.each do |pat| %>
-    <li><%= pat.name %></li>
+    <li id="patient-<%= pat.id %>"><%= pat.name %> 
+      <%= form_with model: DoctorPatient.find_by_doc_pat(@doc, pat), method: :delete, local: true do |f| %>
+        <%= f.submit 'Remove Patient from Caseload' %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
