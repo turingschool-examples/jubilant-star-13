@@ -48,4 +48,12 @@ RSpec.describe "Doctor show page" do
     expect(page).to have_content(@p4.name)
     expect(page).to_not have_content(@p5.name)
   end
+
+  it 'does not break if no patients' do
+    visit hospital_doctor_path(@h1, @d3)
+
+    within("#patients") do
+      expect(page).to have_no_content
+    end
+  end
 end
