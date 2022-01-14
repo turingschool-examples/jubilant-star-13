@@ -14,7 +14,6 @@ RSpec.describe Hospital do
       @doctor_4 = Doctor.create!(name: 'doctor_3', specialty: 'specialty_3', university: 'university_1', hospital_id: @hospital_1.id)
 
       expected = ['university_1', 'university_2']
-      binding.pry
       expect(@hospital_1.universities).to eq(expected)
     end
   end
