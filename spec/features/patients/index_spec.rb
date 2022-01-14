@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Patient index page' do
   it "list all the patient names" do
-    patients = create_list(:patients, 8)
+    patients = create_list(:patient, 8)
     bob = create(:patient, name:'Bob')
     terry = create(:patient, name:'Terry')
 
@@ -15,7 +15,7 @@ RSpec.describe 'Patient index page' do
   end
 
   it "lists all patients from oldest to youngest" do
-    patients = create_list(:patients, 8)
+    patients = create_list(:patient, 8)
     bob = create(:patient, name:'Bob', age: 105)
     terry = create(:patient, name:'Terry', age: 6)
 
@@ -26,7 +26,7 @@ RSpec.describe 'Patient index page' do
   end
 
   it "lists the age of each patient" do
-    patients = create_list(:patients, 8)
+    patients = create_list(:patient, 8)
     bob = create(:patient, name:'Bob', age: 105)
     terry = create(:patient, name:'Terry', age: 6)
 
