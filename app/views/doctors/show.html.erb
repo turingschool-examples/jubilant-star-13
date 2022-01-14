@@ -5,4 +5,5 @@
 <h3> Patients: </h3>
 <% @doctor.patients.each do |patient| %>
 <%= patient.name %>
+<%= button_to "Remove #{patient.name}", "/doctors/#{@doctor.id}/patients", method: :delete, params: {:patient_id => patient.id, :doctor_id => @doctor.id} %></p>
 <% end  %>

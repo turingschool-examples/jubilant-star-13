@@ -42,4 +42,11 @@ let!(:doc_pat_4) {DoctorPatient.create!(doctor: doc_2, patient: patient_4)}
     expect(page).to have_content(patient_3.name)
     expect(page).not_to have_content(patient_4.name)
   end
+
+  xit "has a remove patients button" do
+    visit "/doctors/#{doc_2.id}"
+    expect(page).to have_content(patient_4.name)
+    click_on "Remove #{patient_4.name}"
+    expect(page).not_to have_content(patient_4.name)
+  end
 end

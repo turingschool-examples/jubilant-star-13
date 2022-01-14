@@ -1,41 +1,33 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/doctor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/ericchon/turing/2mod/final/jubilant-star-13/spec/models/hospital_spec.rb": {
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/spec/features/hospital/show_spec.rb": {
         "lines": [
           1,
           null,
           1,
+          5,
           null,
-          3,
-          null,
-          3,
-          3,
-          3,
-          3,
+          5,
+          5,
+          5,
           null,
           1,
-          2,
+          1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
           1,
           1,
           null,
@@ -48,20 +40,25 @@
           1,
           null,
           1,
-          1,
+          4,
           null,
           null
         ]
       },
-      "/Users/ericchon/turing/2mod/final/jubilant-star-13/spec/models/patient_spec.rb": {
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/application_record.rb": {
         "lines": [
           1,
-          null,
+          1,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/doctor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           1,
           null,
-          1,
-          2,
-          2,
           null,
           null
         ]
@@ -81,8 +78,47 @@
           1,
           null
         ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/controllers/doctors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/controllers/doctor_patients_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/controllers/hospitals_controller.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1642179550
+    "timestamp": 1642187195
   }
 }
