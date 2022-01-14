@@ -4,4 +4,11 @@ class Hospital < ApplicationRecord
   def total_doctors
     doctors.count
   end
+
+  def doctor_universities
+    doctors
+    .select(:university)
+    .distinct
+    .pluck(:university)
+  end
 end
