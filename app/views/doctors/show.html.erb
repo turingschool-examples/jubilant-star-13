@@ -2,8 +2,8 @@
 <br>
 <p>Specialty: <%= @doctor.specialty %></p>
 <p>University: <%= @doctor.university %></p>
-<p>Hospital of employment: <%= @doctor.hospital.name %></p>
+<p>Hospital of employment: <%= @doctor.employer %></p>
 <p>Patients under <%= @doctor.name %>'s care:</p>
-<% @doctor.patients.each do |patient| %>
+<% @patients.each do |patient| %>
   <li><%=patient.name%> - <%= button_to "Remove #{patient.name}", doctor_path(@doctor.id), method: :delete, params: {patient_id: patient.id}%><br></li>
 <% end %>

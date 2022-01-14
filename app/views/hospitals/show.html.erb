@@ -1,6 +1,6 @@
 <h1><%=@hospital.name%></h1>
 <p>Total number of doctors working here: <%= @hospital.total_doctors %></p>
 <p>Here are the universities that our doctor's have attended:</p>
-<% @hospital.doctor_universities.each do |uni| %>
-  <li><%= uni %></li>
+<% @hospital.doctor_universities.each do |university| %>
+  <li><%= university %></li>
 <% end %>
