@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
   resources :doctors, only: :show
-end 
+  resources :hospitals, only: :show
+end
