@@ -26,15 +26,15 @@ RSpec.describe "Doctor show page" do
   end
 
   it 'can remove a patient from a doctors workload' do
-    visit hospital_doctor_path(@h1, @d1)
+    visit doctor_path(@d1)
 
     expect(page).to have_content(@p1.name)
 
-    within("#patient-#{@p1.id}") do
+    within("#doc_pat-#{@dp1.id}") do
       click_button "Remove Patient"
     end
 
-    expect(current_path).to eq(hospital_doctor_path(@h1, @d1))
+    expect(current_path).to eq(doctor_path(@d1))
     expect(page).to_not have_content(@p1.name)
   end
 end

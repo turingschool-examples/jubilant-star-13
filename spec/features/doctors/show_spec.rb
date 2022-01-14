@@ -24,7 +24,7 @@ RSpec.describe "Doctor show page" do
   end
 
   it 'shows all of a doctors information' do
-    visit hospital_doctor_path(@h1, @d1)
+    visit doctor_path(@d1)
 
     expect(page).to have_content(@d1.name)
     expect(page).to have_content(@d1.specialty)
@@ -33,14 +33,14 @@ RSpec.describe "Doctor show page" do
   end
 
   it 'has the hospital name for the doctor' do
-    visit hospital_doctor_path(@h1, @d1)
+    visit doctor_path(@d1)
 
     expect(page).to have_content(@h1.name)
     expect(page).to_not have_content(@h2.name)
   end
 
   it 'has the name of all the doctors patients' do
-    visit hospital_doctor_path(@h1, @d1)
+    visit doctor_path(@d1)
 
     expect(page).to have_content(@p1.name)
     expect(page).to have_content(@p2.name)
@@ -50,7 +50,7 @@ RSpec.describe "Doctor show page" do
   end
 
   it 'does not break if no patients' do
-    visit hospital_doctor_path(@h1, @d3)
+    visit doctor_path(@d3)
 
     within("#patients") do
       expect(page).to have_no_content
