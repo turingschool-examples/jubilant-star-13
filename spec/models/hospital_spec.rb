@@ -17,12 +17,19 @@ RSpec.describe Hospital do
       @doctor_5 = @hospital_1.doctors.create!(name: "Dr 5", specialty: "Specialty 5", university: "University 3" )
 
       @doctor_6 = @hospital_2.doctors.create!(name: "Dr 6", specialty: "Specialty 6", university: "University 4" )
-      @doctor_7 = @hospital_2.doctors.create!(name: "Dr 7", specialty: "Specialty 7", university: "University 5" )
+      @doctor_7 = @hospital_2.doctors.create!(name: "Dr 7", specialty: "Specialty 7", university: "University 4" )
+      @doctor_8 = @hospital_2.doctors.create!(name: "Dr 8", specialty: "Specialty 8", university: "University 5" )
+      @doctor_9 = @hospital_2.doctors.create!(name: "Dr 9", specialty: "Specialty 9", university: "University 5" )
     end
 
     it 'counts the number of doctors at the hospital' do
       expect(@hospital_1.doctor_count).to eq(5)
-      expect(@hospital_2.doctor_count).to eq(2)
+      expect(@hospital_2.doctor_count).to eq(4)
+    end
+
+    xit 'makes a list of unique universities attended by doctors of the hospital' do
+      expect(@hospital_1.unique_universities).to eq(["University 1", "University 2", "University 3"])
+      expect(@hospital_2.unique_universities).to eq(["University 4", "University 5"])
     end
   end
 end
