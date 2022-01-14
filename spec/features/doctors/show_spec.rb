@@ -14,8 +14,8 @@ RSpec.describe "Doctor show page", type: :feature do
 
     @hospital1 = Hospital.create!(name: "Grey Sloan Memorial Hospital")
 
-    @doctor1 = Doctor.create!(name: "Meredith Grey", specialty: "General Surgery", univeristy: "Harvard University", hospital_id: @hospital1.id)
-    @doctor2 = Doctor.create!(name: "Alex Karev", specialty: "Pediatrics", univeristy: "Washington State University", hospital_id: @hospital1.id)
+    @doctor1 = Doctor.create!(name: "Meredith Grey", specialty: "General Surgery", university: "Harvard University", hospital_id: @hospital1.id)
+    @doctor2 = Doctor.create!(name: "Alex Karev", specialty: "Pediatrics", university: "Washington State University", hospital_id: @hospital1.id)
 
     visit doctor_path(@doctor1)
 
