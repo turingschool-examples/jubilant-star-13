@@ -12,7 +12,7 @@ RSpec.describe Hospital do
     let!(:merideth) {Doctor.create!(name: "Merideth Grey", specialty: "General Surgery", university: "Boston University", hospital: grace)}
     let!(:dreamy) {Doctor.create!(name: "Doctor Dreamy", specialty: "Neuroscience", university: "Boston University", hospital: grace)}
     it 'collects a unique list of schools that staff attended' do
-      expect(grace.unique_staff_schools).to eq(["Stanford University", "Boston University"])
+      expect(grace.unique_staff_schools).to eq(["Boston University", "Stanford University"])
     end
   end
 end
