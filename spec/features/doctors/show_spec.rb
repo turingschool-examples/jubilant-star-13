@@ -36,4 +36,22 @@ RSpec.describe 'doctor show page' do
       expect(page).to have_content('Charlie')
     end
   end
+
+  it "has a button next to each patients name that removes the patient from the doctors caseload" do
+    doctor = create(:doctor)
+    patient_1 = create(:patient_with_doctor, name: "Billy", doctor: doctor)
+    patient_2 = create(:patient_with_doctor, name: "Amy", doctor: doctor)
+    patient_3 = create(:patient_with_doctor, name: "Charlie", doctor: doctor)
+
+    visit(doctor_path(doctor))
+  
+    within "div.doctor_patient_#{patient_2.id}" do
+      click_button "Remove Patient"
+    end
+
+    expect(current_path).to eq(doctor_path(doctor))
+    within "div.patients" do
+      expect(page).to_not have_content("Amy")
+    end
+  end
 end
