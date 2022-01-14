@@ -7,5 +7,7 @@
 
 <h2>Patients</h2>
 <% @doctor.patients.each do |patient| %>
-  <p><%=patient.name%></p>
+  <section id="patient_<%=patient.id%>">
+    <p><%=patient.name%></p><%= button_to("Remove this Patient", method: "delete", url:"/doctors/#{@doctor.id}/patients/#{patient.id}") %>
+  </section>
 <%end%>
