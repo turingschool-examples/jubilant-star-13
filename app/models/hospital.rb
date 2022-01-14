@@ -6,6 +6,6 @@ class Hospital < ApplicationRecord
   end
 
   def universities
-    Hospital.joins(:doctors).pluck(:university).uniq
+    doctors.pluck(:university).uniq
   end
 end
