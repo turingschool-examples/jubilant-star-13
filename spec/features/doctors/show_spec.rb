@@ -19,18 +19,20 @@ describe 'doctor show' do
     it 'info' do
       expect(page).to have_content(@our_doctor.name)
       expect(page).to have_content(@our_doctor.specialty)
-      expect(page).to have_content(@our_doctor.education)
+      expect(page).to have_content(@our_doctor.university)
       expect(page).to_not have_content(@not_our_doctor)
     end
 
     it 'hospital this doctor belongs to' do
-      expect(page).to have_content(@doctor.hospital.name)
+      expect(page).to have_content(@our_doctor.hospital.name)
     end
 
     it 'names of this doctors patients' do
-      expect(page).to have_content(@our_patient1.name)
-      expect(page).to have_content(@our_patient2.name)
-      expect(page).to have_content(@not_our_patient.name)
+      within("#patients") do
+        expect(page).to have_content(@our_patient1.name)
+        expect(page).to have_content(@our_patient2.name)
+        expect(page).to_not have_content(@not_our_patient.name)
+      end
     end
   end
 end
