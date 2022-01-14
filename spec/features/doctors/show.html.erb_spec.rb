@@ -43,5 +43,26 @@ RSpec.describe 'doctors/show.html.erb', type: :feature do
         expect(page).to have_no_content(pat_4.name)
       end
     end
+
+    describe 'clickable elements' do
+      it 'displays a button to delete doctor patient connection' do
+        within("#patient-#{pat_1.id}") do
+          expect(page).to have_button('Remove Patient from Caseload')
+        end
+      end
+      
+      it 'deletes the doctor patient connection and returns to the doctor show page' do
+        expect(doc_1.patients).to include(pat_1)
+
+        within("#patient-#{pat_1.id}") do
+          click_button('Remove Patient from Caseload')
+        end
+        expect(page).to have_no_content(pat_1.name)
+        expect(doc_1.patients).not_to include(pat_1)
+        expect(pat_1.doctors).not_to include(doc_1)
+        
+        expect(page).to have_current_path(doctor_path(doc_1))
+      end
+    end
   end
 end
