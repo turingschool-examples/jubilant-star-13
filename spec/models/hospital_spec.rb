@@ -35,7 +35,7 @@ RSpec.describe Hospital do
     end
 
     it '#universities' do
-      expect(@h1.universities).to eq(["Stanford University", "Doctor University, Harvard University"].sort)
+      expect(@h1.universities).to eq(["Stanford University", "Doctor University", "Harvard University"].sort)
     end
   end
 end
