@@ -9,5 +9,5 @@ Hospital: <%= @doctor.hospital.name %><br>
 <% @doctor.patients.each do |patient| %>
   Patient Name: <%= patient.name %>
 
-  <%= button_to "Remove #{patient.name}", "/doctors/#{@doctor.id}/patients/", params: {patient_id: patient.id, doctor_id: @doctor.id }, method: :delete %><br>
+  <%= button_to "Remove #{patient.name}", doctor_patients_path(@doctor.id), params: {patient_id: patient.id, doctor_id: @doctor.id }, method: :delete %><br>
 <% end %>
