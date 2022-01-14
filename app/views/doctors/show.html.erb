@@ -5,6 +5,11 @@
 <p>Attending Hospital: <%= @doctor.hospital.name %></p>
 
 <h3>Current Patients:</h3>
-<% @doctor.patients.each do |patient| %>
-  <p><%= patient.name %></p>
+  <% @doctor.patients.each do |patient| %>
+  <section id="patient-<%= patient.id %>">
+    <p>
+      <%= patient.name %>
+      <%= button_to "Remove Patient", hospital_doctor_patient_path(@doctor.hospital, @doctor, patient), method: :delete %>
+    </p>
+  </section>
 <% end %>
