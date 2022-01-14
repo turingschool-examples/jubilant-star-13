@@ -39,7 +39,7 @@ RSpec.describe 'Hospital Show Page' do
 
   it 'displays a unique list of universities that this hospitals doctors attended' do
     expect(page).to have_content("Stanford university")
-    expect(page).to have_content("Harvard university")
+    expect(page).to_not have_content("Harvard university")
     expect(page).to_not have_content("Some university")
   end
 
