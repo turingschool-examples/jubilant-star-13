@@ -1,0 +1,5 @@
+<h1>Hospital Information</h1>
+
+<p>Hospital name: <%= @hospital.name %></p>
+<p>Number of doctors that work at hospital: <%= @hospital.dr_count %></p>
+<p>These doctors have attended these universities: <%= @hospital.unique_uni.join(', ') %></p>
