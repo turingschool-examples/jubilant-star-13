@@ -38,7 +38,7 @@ RSpec.describe 'doctor show page' do
     expect(page).to have_content("Doctorate Recieved From: Boston University")
   end
 
-  xit 'displays the name of the hospital the doctor works at' do
+  it 'displays the name of the hospital the doctor works at' do
 
     visit "/doctors/#{bailey.id}"
 
