@@ -8,5 +8,6 @@
   <p>Doctorate Program: </p><%= @doctor.university %>
   <p>Patients: </p><% @doctor.patients.each do |patient| %>
     <%= patient.name %>
+    <%= button_to "Remove #{patient.name}", doctor_patient_path(@doctor, patient), method: :delete %>
   <% end %>
 </div>
