@@ -21,6 +21,7 @@ RSpec.describe 'Doctor Show Page', type: :feature do
   context 'When I visit a doctor show page' do
     scenario 'I see the doctor attributes' do
       expect(page).to have_content(doctor_1.name)
+      expect(page).to have_no_content(doctor_2.name)
       expect(page).to have_content(doctor_1.specialty)
       expect(page).to have_content(doctor_1.university)
     end
