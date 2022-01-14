@@ -1,10 +1,12 @@
 <h1><%= @hospital.name %></h1>
 
-<p>Doctors Currently Attending: <%= @hospital.doctor_count %></p>
+<section id="num_doctors">
+  <p>Doctors Currently Attending: <%= @hospital.doctor_count %></p>
+</section>
 
 <p>
   Universities our Doctors Attended:
   <% @hospital.universities.each do |uni| %>
-    <%= uni.name %>
+    <%= uni %>
   <% end %>
 </p>
