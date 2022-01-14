@@ -28,10 +28,20 @@ describe 'doctor show' do
     end
 
     it 'names of this doctors patients' do
-      within('#patients') do
+      within '#patients' do
         expect(page).to have_content(@our_patient1.name)
         expect(page).to have_content(@our_patient2.name)
         expect(page).to_not have_content(@not_our_patient.name)
+      end
+    end
+
+    it 'button to remove patient/doctor association' do
+      within '#patients' do
+        within "#patient-#{@our_patient1.id}" do
+          click_button 'Remove Patient'
+        end
+        expect(current_path).to eq(doctor_path(@doctor))
+        expect(page).to_not have_content(@our_patient1.name)
       end
     end
   end

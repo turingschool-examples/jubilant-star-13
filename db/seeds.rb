@@ -11,3 +11,7 @@ Hospital.destroy_all
 @doctor2 = Doctor.create(name: 'Suess', specialty: 'Knees/Toes', university: 'RhymeTime', hospital_id: @hospital.id)
 @doctor3 = Doctor.create(name: 'Octavis', specialty: 'Knees/Toes', university: 'Marvel', hospital_id: @hospital.id)
 @not_our_doctor = Doctor.create(name: 'Phil', specialty: 'nothing', university: 'unknown', hospital_id: @not_our_hospital.id)
+
+@patient = Patient.create(name: "Name", age: 32)
+
+@doctor_patient = DoctorPatient.create(doctor_id: @doctor1.id, patient_id: @patient.id)
