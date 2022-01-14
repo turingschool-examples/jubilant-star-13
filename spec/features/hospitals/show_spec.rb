@@ -28,6 +28,5 @@ RSpec.describe "the hospital show page" do
     expect(page).to have_content(doctor_1.university)
     expect(page).to have_content(doctor_2.university)
     expect(page).to have_content("CU", count: 1)
-    save_and_open_page
   end
 end
