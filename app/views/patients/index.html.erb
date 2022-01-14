@@ -1,0 +1,4 @@
+<p>All patients, listed by age, oldest to youngest:</p>
+<% @patients.order_by_age.each do |patient| %>
+  <%= patient + ', ' %>
+<% end %>

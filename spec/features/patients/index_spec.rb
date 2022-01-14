@@ -1,12 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Patient do
-  describe 'relationships' do
-    it { should have_many(:doctor_patients) }
-    it { should have_many(:doctors).through(:doctor_patients)}
-  end
+RSpec.describe 'Patient index page' do
 
-  it 'can show all patients in descending order by age' do
+  it 'can show all patients from oldest to youngest' do
+
     hospital_1 = Hospital.create!(name: 'Hospital 1')
     hospital_2 = Hospital.create!(name: 'Hospital 2')
 
@@ -26,7 +23,9 @@ RSpec.describe Patient do
     dp_13 = DoctorPatient.create!(doctor_id: doctor_1.id, patient_id: patient_3.id)
     dp_24 = DoctorPatient.create!(doctor_id: doctor_2.id, patient_id: patient_4.id)
 
-    expect(Patient.order_by_age).to eq(["Patient 4", "Patient 3", "Patient 2", "Patient 1"])
+    visit "/patients"
 
+    expect(page).to have_content("Patient 4, Patient 3, Patient 2, Patient 1")
   end
+
 end

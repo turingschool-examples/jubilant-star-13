@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/hospitals/:hospital_id', to: 'hospitals#show'
 
   delete '/doctors/:doctor_id/patients/:patient_id', to: 'doctor_patients#destroy'
+
+  get '/patients', to: 'patients#index'
 end
