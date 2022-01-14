@@ -15,7 +15,7 @@ RSpec.describe "hospital show page" do
 
     visit(hospital_path(hospital))
 
-    expect(page).to have_content("#{hospital.name} has 5 doctors")
+    expect(page).to have_content("Doctors at #{hospital.name}: 5")
   end
 
   it "shows a unique list of universities that it's doctors attended" do

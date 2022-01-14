@@ -32,13 +32,13 @@ RSpec.describe Hospital do
         doctor_3 = create(:doctor, hospital: hospital, university: "Harvard")
         doctor_4 = create(:doctor, hospital: hospital, university: "Princeton")
 
-        expect(hospital.universities).to eq(["Yale", "Harvard", "Princeton"])
+        expect(hospital.universities).to eq(["Harvard", "Princeton", "Yale"])
 
         doctor_5 = create(:doctor, university: "Stanford")
-        expect(hospital.universities).to eq(["Yale", "Harvard", "Princeton"])
+        expect(hospital.universities).to eq(["Harvard", "Princeton", "Yale"])
 
         doctor_6 = create(:doctor, hospital: hospital, university: "Stanford")
-        expect(hospital.universities).to eq(["Yale", "Harvard", "Princeton", "Stanford"])
+        expect(hospital.universities).to eq(["Harvard", "Princeton", "Stanford", "Yale"])
       end
     end
   end
