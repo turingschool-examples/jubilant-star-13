@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'doctor show page' do
+describe 'patient deleted' do
   before do
     @hospital = Hospital.create!(name: "Grey Sloan Memorial Hospital")
     @bailey = @hospital.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
@@ -12,26 +12,13 @@ describe 'doctor show page' do
     @bailey_patient2 = PatientDoctor.create!(doctor_id: @bailey.id, patient_id: @patient2.id)
     visit doctor_path(@bailey)
   end
-  it 'displays name, specialty, and university' do
-    expect(page).to have_content(@bailey.name)
-    expect(page).to have_content(@bailey.specialty)
-    expect(page).to have_content(@bailey.university)
-  end
-
-  it 'shows hospital doctor works at and all patients they care for' do
-    expect(page).to have_content(@hospital.name)
-    expect(page).to have_content(@patient1.name)
-    expect(page).to have_content(@patient2.name)
-  end
-
-  it 'has button to remove patient' do
+  it 'removes patient from doctor when button is clicked' do
     within "#doctors_patients" do
       within "#patient-#{@patient1.id}" do
-        expect(page).to have_button("Remove This Patient")
+        click_button("Remove This Patient")
       end
     end
+    expect(current_path).to eq(doctor_path(@bailey))
+    expect(page).not_to have_content(@patient1.name)
   end
-
-  # add more patients associated w different doctor
-  # for more robust testing after complete other stories
 end
