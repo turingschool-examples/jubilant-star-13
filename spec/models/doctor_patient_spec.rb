@@ -1,4 +1,8 @@
-require 'rail_helper'
+require 'rails_helper'
 
 RSpec.describe DoctorPatient do
-end 
+  describe 'relationships' do
+    it { should belong_to(:doctor) }
+    it { should belong_to(:patient) }
+  end
+end
