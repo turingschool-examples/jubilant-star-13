@@ -10,7 +10,7 @@ RSpec.describe 'hospital show page' do
 
   let!(:patient_1) {Patient.create!(name: "Jack Napier", age: 90)}
   let!(:patient_2) {Patient.create!(name: "Selena Kyle", age: 80)}
-  let!(:patient_3) {Patient.create!(name: "Oswald Cobblepot", age: 70)}
+  let!(:patient_3) {Patient.create!(name: "Oswald Chesterfield Cobblepot", age: 70)}
   let!(:patient_4) {Patient.create!(name: "Edward Nigma", age: 60)}
 
   let!(:doctor_patient_1) {DoctorPatient.create!(patient_id: patient_1.id, doctor_id: doctor_1.id)}
