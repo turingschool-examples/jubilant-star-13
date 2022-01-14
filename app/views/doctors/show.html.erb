@@ -1,0 +1,11 @@
+<h1><%= @doc.name %> Show Page</h1>
+
+<h2>Specialty: <%= @doc.specialty %></h2>
+<h2>University: <%= @doc.university %></h2>
+<h2>Hospital: <%= @doc.hospital.name %></h2>
+<h2>Patients List:</h2>
+<ul>
+  <% @doc.patients.each do |pat| %>
+    <li><%= pat.name %></li>
+  <% end %>
+</ul>
