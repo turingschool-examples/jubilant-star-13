@@ -21,7 +21,8 @@ describe 'hospital show page' do
   end
 
   it 'I see a unique list of universities that this hospitals doctors attended' do
-    expect(page).to have_content("Universities attended: Stanford University Washington University ")
+    expect(page).to have_content("Universities attended: Stanford University Washington University")
+    expect(page).to_not have_content("Universities attended: Stanford University Washington University Washington University")
     expect(page).to_not have_content(@christina.university)
   end
 end
