@@ -14,7 +14,7 @@ RSpec.describe 'Doctor Show Page' do
 
   it 'displays doctor, hospital, patient info' do
     visit "/doctors/#{@bailey.id}"
-
+save_and_open_page
     expect(page).to have_content(@bailey.name)
     expect(page).to have_content(@bailey.specialty)
     expect(page).to have_content(@bailey.university)
