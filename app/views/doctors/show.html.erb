@@ -7,4 +7,5 @@
 
 <% @doctor.patients.each do |patient| %>
   <p>Patient name: <%= patient.name %></p>
+  <p><%= button_to "Delete #{patient.name}", "/doctors/#{@doctor.id}/patients", method: :delete, params: {patient_id: patient.id, doctor_id: @doctor.id} %></p>
 <% end %>
