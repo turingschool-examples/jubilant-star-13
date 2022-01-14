@@ -41,32 +41,44 @@ RSpec.describe 'Doctor Show Page', type: :feature do
 
     context'to remove a patient from doctor case load' do
       scenario 'I see a button to remove the patient' do
-        within "#patient-#{patient_1.id}" do
+        within "#patient#{patient_1.id}" do
           expect(page).to have_button("Remove Patient")
         end
       end
 
       scenario 'I click the button for one patient, am redirected to doctor show page, and patients name is not listed' do
         expect(page).to have_content(patient_1.name)
+        expect(page).to have_content(patient_2.name)
+        expect(page).to have_content(patient_3.name)
         expect(current_path).to eq(doctor_path(doctor_1.id))
 
-        within "#patient-#{patient_1.id}" do
+        within "#patient#{patient_1.id}" do
           expect(page).to have_button("Remove Patient")
           click_button "Remove Patient"
         end
 
         expect(current_path).to eq(doctor_path(doctor_1.id))
         expect(page).to have_no_content(patient_1.name)
+        expect(page).to have_content(patient_2.name)
+        expect(page).to have_content(patient_3.name)
+
+        within "#patient#{patient_2.id}" do
+          expect(page).to have_button("Remove Patient")
+          click_button "Remove Patient"
+        end
+
+        expect(current_path).to eq(doctor_path(doctor_1.id))
+        expect(page).to have_no_content(patient_2.name)
+        expect(page).to have_content(patient_3.name)
       end
 
       scenario 'I remove patient from doctor workload but not from database' do
-        within "#patient-#{patient_1.id}" do
+        within "#patient#{patient_1.id}" do
           click_button "Remove Patient"
         end
 
         expect(page).to have_no_content(patient_1.name)
         expect(patient_1).to be_instance_of(Patient)
-        expect(doctor_patient_1).to be(Nil)
       end
     end
   end
