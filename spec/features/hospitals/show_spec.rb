@@ -25,7 +25,9 @@ RSpec.describe "Hospital show page", type: :feature do
 
     visit hospital_path(hospital1)
 
-    expect(page).to have_content("UC Berkeley Medical School\nLA Med")
+    within ".hospital-universities" do
+      expect(page).to have_content("LA Med\nUC Berkeley Medical School")
+    end
   end
 
 end

@@ -6,7 +6,7 @@ class Hospital < ApplicationRecord
   end
 
   def doctors_universities
-    doctors.universities
+    doctors.universities.sort
   end
 
 end

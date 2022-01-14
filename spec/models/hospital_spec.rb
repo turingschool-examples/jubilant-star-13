@@ -23,7 +23,7 @@ RSpec.describe Hospital do
     doctor2 = Doctor.create!(name: "Owen Hunt", specialty: "Trauma Surgery", university: "UC Berkeley Medical School", hospital_id: hospital1.id)
     doctor3 = Doctor.create!(name: "Mark Sloane", specialty: "Plastic Surgery", university: "LA Med", hospital_id: hospital1.id)
 
-    expect(hospital1.doctors_universities).to contain_exactly("UC Berkeley Medical School", "LA Med")
+    expect(hospital1.doctors_universities).to contain_exactly("LA Med", "UC Berkeley Medical School")
   end
 
 
