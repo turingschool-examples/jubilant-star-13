@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'doctor show page' do
   it "shows all of the doctors information" do
-    doctor = create(:doctor, name: 'Bob', speciality: 'eye stuff', university: 'Yale')
+    doctor = create(:doctor, name: 'Bob', specialty: 'eye stuff', university: 'Yale')
 
     visit(doctor_path(doctor))
 
