@@ -1,0 +1,7 @@
+<div class="hospital">
+  <h1>Hospital: <%= @hospital.name %> </h1>
+  <ul>
+    <li>Doctors on staff: <%= @hospital.doctor_count %></li>
+    <li>University's of the doctors: <%= @hospital.doctor_educations.join(', ') %></li>
+  </ul>
+</div>
