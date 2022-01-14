@@ -1,0 +1,8 @@
+<h1>Patient's Index Page</h1>
+
+<h2>Patient's List Ordered Oldest to Youngest</h2>
+<ul>
+  <% @pats.age_ordered.each do |pat| %>
+    <li><%= pat.name %> - Age: <%= pat.age %></li>
+  <% end %>
+</ul>
