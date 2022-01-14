@@ -27,5 +27,12 @@ RSpec.describe Hospital, type: :model do
         expect(hosp_2.doctor_count).to eq(1)
       end
     end
+
+    describe '#uniq_universities' do
+      it 'returns list of hospitals doctors unique university names' do
+        expect(hosp_1.uniq_universities).to contain_exactly('uni_1', 'uni_3')
+        expect(hosp_1.uniq_universities).not_to include('uni_2')
+      end
+    end
   end
 end
