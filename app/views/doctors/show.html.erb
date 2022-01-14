@@ -1,10 +1,11 @@
-<p><%= @doctor.name %> </p>
-<p><%= @doctor.specialty %> </p>
-<p><%= @doctor.university %> </p>
+<p>Doctor name: <%= @doctor.name %> </p>
+<p>Doctor specialty: <%= @doctor.specialty %> </p>
+<p>Doctor university: <%= @doctor.university %> </p>
 
-<p><%= @doctor.hospital.name %> </p>
+<p>Name of doctor's hospital: <%= @doctor.hospital.name %> </p>
 
+<p>Doctor's patients:</p>
 <% @doctor.patients.each do |patient|  %>
-  <p><%= patient.name %></p>
+  <p>Patient name: <%= patient.name %></p>
   <%= button_to "Remove #{patient.name}", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete %>
 <% end %>
