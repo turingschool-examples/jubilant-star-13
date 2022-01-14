@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe DoctorPatient, type: :model do
-  it { should have_a(:doctor) }
-  it { should have_a(:patient) }
-  it { should have_a(:hospital).through(:doctor) }
+  it { should belong_to(:doctor) }
+  it { should belong_to(:patient) }
+  it { should have_many(:hospitals).through(:doctor) }
 end
