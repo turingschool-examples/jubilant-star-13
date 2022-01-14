@@ -10,6 +10,7 @@ RSpec.describe Hospital do
   describe 'instance methods' do
     describe '#doctor_count' do
       it "returns the number of doctors that work at this hospital" do
+        # edge case: no doctors
         hospital = create(:hospital)
         expect(hospital.doctor_count).to eq(0)
 
@@ -25,8 +26,12 @@ RSpec.describe Hospital do
     end
 
     describe '#universities' do
-      it "returns a list of unique university names that thsi hospitals doctors attended" do
+      it "returns a list of unique university names that this hospitals doctors attended" do
         hospital = create(:hospital)
+
+        # edge case: no doctors
+        expect(hospital.universities).to eq([])
+
         doctor_1 = create(:doctor, hospital: hospital, university: "Yale")
         doctor_2 = create(:doctor, hospital: hospital, university: "Yale")
         doctor_3 = create(:doctor, hospital: hospital, university: "Harvard")
