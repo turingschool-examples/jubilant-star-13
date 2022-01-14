@@ -244,22 +244,14 @@
           null,
           null,
           1,
+          null,
+          1,
           null
         ]
       },
       "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/app/helpers/application_helper.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/spec/models/doctor_patient_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          2,
           null
         ]
       },
@@ -284,9 +276,9 @@
           null,
           1,
           1,
-          2,
-          2,
-          2,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -302,20 +294,7 @@
       },
       "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/spec/models/hospital_spec.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/app/models/hospital.rb": {
-        "lines": [
-          1,
-          1,
-          null
+
         ]
       },
       "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/spec/models/patient_spec.rb": {
@@ -323,8 +302,8 @@
           1,
           null,
           1,
-          2,
-          2,
+          1,
+          1,
           null
         ]
       },
@@ -335,23 +314,8 @@
           1,
           null
         ]
-      },
-      "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/app/controllers/doctors_controller.rb": {
-        "lines": [
-          1,
-          1,
-          4,
-          null,
-          null
-        ]
-      },
-      "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1642178840
+    "timestamp": 1642179783
   }
 }
