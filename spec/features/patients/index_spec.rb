@@ -10,6 +10,10 @@ describe 'patients index page' do
   end
 
   it 'I see the names of all patients listed from oldest to youngest' do
+    expect(page).to have_content(@patient1.name)
+    expect(page).to have_content(@patient2.name)
+    expect(page).to have_content(@patient3.name)
+    expect(page).to have_content(@patient4.name)
     expect(@patient3.name).to appear_before(@patient4.name)
     expect(@patient3.name).to appear_before(@patient2.name)
     expect(@patient3.name).to appear_before(@patient1.name)
