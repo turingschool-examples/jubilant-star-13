@@ -14,7 +14,7 @@ RSpec.describe "Doctor Show" do
     expect(page).to have_content(hospital.name)
     expect(page).to have_content(doctor.name)
     expect(page).to have_content(doctor.university)
-    expect(page).to have_content(hospital.specialty)
+    expect(page).to have_content(doctor.specialty)
     expect(page).to have_content(patient1.name)
     expect(page).to have_content(patient2.name)
   end
