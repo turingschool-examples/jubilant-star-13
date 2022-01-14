@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   end
   
   resources :doctors, only: [:show] do
+    resources :patients, only: [:destroy]
   end
+
 end 
 
