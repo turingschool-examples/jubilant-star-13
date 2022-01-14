@@ -20,10 +20,10 @@ RSpec.describe 'hospital show page' do
 
     visit "/hospitals/#{tacoma.id}"
 
-    expect(page).to have_content("Tacoma Ungraceful Memorial Hospital")
+    expect(page).to have_content("Tacoma Ungraceful Memorial Hospital's Information")
   end
 
-  it 'shows the number of doctors working at the hospital' do
+  xit 'shows the number of doctors working at the hospital' do
     visit "/hospitals/#{grace.id}"
 
     expect(page).to have_content("Number of Doctors employed: 3")
@@ -33,7 +33,7 @@ RSpec.describe 'hospital show page' do
     expect(page).to have_content("Number of Doctors employed: 4")
   end
 
-  it 'lits the unique universities that its doctors have attended' do
+  xit 'lits the unique universities that its doctors have attended' do
     visit "/hospitals/#{grace.id}"
 
     expect(page).to have_content("Schools attended by Staff")
