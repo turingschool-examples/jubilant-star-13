@@ -23,7 +23,7 @@ RSpec.describe DoctorPatient, type: :model do
   let!(:doc_pat_4) { DoctorPatient.create!(doctor: doc_1, patient: pat_3) }
 
   describe 'class methods' do
-    describe '#find_by_doc_pat' do
+    describe '::find_by_doc_pat' do
       it 'returns the doctor_patient record' do
         expect(DoctorPatient.find_by_doc_pat(doc_1, pat_1)).to eq(doc_pat_1)
         expect(DoctorPatient.find_by_doc_pat(doc_1, pat_2)).to eq(doc_pat_2)
