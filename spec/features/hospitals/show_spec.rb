@@ -19,7 +19,7 @@ describe 'hospital show' do
     end
 
     it 'number of doctors that work here' do
-      expect(page).to have_content("Number of doctors at this hospital: 3")
+      expect(page).to have_content("Number of doctors: 3")
     end
 
     it 'unique list of universities that doctors of this hospital attended' do
@@ -28,5 +28,5 @@ describe 'hospital show' do
         expect(page).to have_content('RhymeTime')
       end
     end
-  end 
+  end
 end
