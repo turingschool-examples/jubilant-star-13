@@ -5,7 +5,7 @@ RSpec.describe 'Doctors show page' do
     @hospital1 = Hospital.create!(name: "Turing Hospital")
     @doctor1 = @hospital1.doctors.create!(name: "Doctor Turing", specialty: "ENT", university: "Turing Medical School")
 
-    visit "/doctor/#{@doctor1.id}"
+    visit "/doctors/#{@doctor1.id}"
   end
 
   describe 'when I visit the doctor show page' do
