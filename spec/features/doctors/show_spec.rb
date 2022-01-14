@@ -23,4 +23,15 @@ RSpec.describe 'Doctor Show Page' do
     expect(page).to have_content(@drew.name)
     expect(page).to have_content(@anne.name)
   end
+
+  it 'can remove a patient from a doctor' do
+    visit "/doctors/#{@bailey.id}"
+
+    expect(page).to have_content("Drew Jones")
+
+    click_button "Remove Drew Jones"
+
+    expect(current_path).to eq("/doctors/#{@bailey.id}")
+    expect(page).to_not have_content("Drew Jones")
+  end
 end
