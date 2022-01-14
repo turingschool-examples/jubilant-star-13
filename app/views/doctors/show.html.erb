@@ -4,6 +4,15 @@
 <p>Specialty: <%= @doctor.specialty %></p>
 <p>University attended: <%=@doctor.university %></p>
 
+
+
+
+
+<section id='doctors_patients'>
+<h3>Patients this doctor cares for:</h3>
 <% @doctor.patients.each do |patient| %>
-<%= patient.name %>
-<% end  %>
+  <div id="patient-<%= patient.id %>">
+    <p><%= patient.name %>
+    <%= button_to "Remove This Patient", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete %></p>
+  </div>
+<% end %>
