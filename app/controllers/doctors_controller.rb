@@ -8,7 +8,13 @@ class DoctorsController < ApplicationController
   def update
     @doctor = Doctor.find(params[:id])
     @patient = Patient.find(params[:patient_id])
-    remove_patient = @doctor.patients.select(@patient.id)
-    require "pry"; binding.pry
+    @doctor.patients.select(@patient.id).remove_connection
+    @doctor.update(doctor_params)
+    redirect_to "/doctors/#{@doctor.id}"
   end
+
+  private
+    def doctor_params
+      params.permit(:patients)
+    end
 end

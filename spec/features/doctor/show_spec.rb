@@ -32,6 +32,7 @@ RSpec.describe "Doctor Show" do
     expect(page).to have_content("Devin")
     click_button("Remove #{patient1.name}")
     expect(current_path).to eq("/doctors/#{doctor.id}")
+    patient1.reload
     expect(page).to_not have_content("Devin")
   end
 end
