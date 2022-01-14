@@ -5,30 +5,50 @@ RSpec.describe "Doctor Show Page" do
     sloans = Hospital.create!({name: "Grey Sloan Memorial Hospital"})
 
     miranda = sloans.doctors.create!({name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University"})
+    derrick = sloans.doctors.create!({name: "Derrick Shepard", specialty: "Brain Surgery", university: "Harvard University"})
 
     visit "/doctors/#{miranda.id}"
 
+    expect(page).to_not have_content(derrick.name)
     expect(page).to have_content(miranda.name)
     expect(page).to have_content(miranda.specialty)
     expect(page).to have_content(miranda.university)
   end
+
   it "shows the name of their hospital" do
+    sloans = Hospital.create!({name: "Grey Sloan Memorial Hospital"})
+    other = Hospital.create!({name: "The Other Hospital"})
+
+    miranda = sloans.doctors.create!({name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University"})
+    derrick = sloans.doctors.create!({name: "Derrick Shepard", specialty: "Brain Surgery", university: "Harvard University"})
+
+    visit "/doctors/#{miranda.id}"
+
+    expect(page).to have_content(sloans.name)
+    expect(page).to_not have_content(other.name)
   end
+
   it "shows the names of their patients" do
+    sloans = Hospital.create!({name: "Grey Sloan Memorial Hospital"})
+    other = Hospital.create!({name: "The Other Hospital"})
+
+    miranda = sloans.doctors.create!({name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University"})
+    derrick = sloans.doctors.create!({name: "Derrick Shepard", specialty: "Brain Surgery", university: "Harvard University"})
+
+    denny = miranda.patients.create!({name: "Denny Duquette", age: 39})
+    elvis = miranda.patients.create!({name: "Elvis Presley", age: 49})
+    mandy = miranda.patients.create!({name: "Mandy Moore", age: 49})
+    bonnie = derrick.patients.create!({name: "Bonnie Jones", age: 20})
+
+    visit "/doctors/#{miranda.id}"
+
+    expect(page).to have_content(denny.name)
+    expect(page).to have_content(elvis.name)
+    expect(page).to have_content(mandy.name)
+    expect(page).to_not have_content(bonnie.name)
+
   end
 end
-
-# User Story 1, Doctors Show Page
-# ​
-# As a visitor
-# When I visit a doctor's show page
-# I see all of that doctor's information including:
-#  - name
-#  - specialty
-#  - university where they got their doctorate
-# And I see the name of the hospital where this doctor works
-# And I see the names of all of the patients this doctor has
-
 
 # User Story 3, Remove a Patient from a Doctor
 # ​
