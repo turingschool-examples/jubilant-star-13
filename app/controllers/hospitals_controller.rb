@@ -3,4 +3,5 @@ class HospitalsController < ApplicationController
     @hospital = Hospital.find(params[:id])
     @doctors = @hospital.doctors
   end
+
 end

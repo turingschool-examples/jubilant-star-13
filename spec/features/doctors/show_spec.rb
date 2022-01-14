@@ -30,5 +30,15 @@ RSpec.describe 'Doctors show page' do
       expect(page).to have_content("Patient Name: #{@patient1.name}")
       expect(page).to have_content("Patient Name: #{@patient2.name}")
     end
+
+    it 'has a button next to each patients name to remove the patient from the doctors caseload' do
+      click_button("Remove #{@patient1.name}") # , href: "/doctors/#{@doctor1.id}/patients/#{@patient1.id}"
+      # save_and_open_page
+
+      expect(current_path).to eq("/doctors/#{@doctor1.id}")
+
+      expect(page).to have_content(@patient2.name)
+      expect(page).to_not have_content(@patient1.name)
+    end
   end
 end
