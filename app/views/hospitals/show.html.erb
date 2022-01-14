@@ -2,4 +2,6 @@
 <p>Number of Doctors employed: <%=@hospital.doctors.count%></p>
 
 <h2>Schools Attended by Staff</h2>
-<p></p>
+<%@hospital.unique_staff_schools.each do |school| %>
+  <p><%=school%></p>
+<%end%>

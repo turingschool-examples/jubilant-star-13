@@ -37,14 +37,15 @@ RSpec.describe 'hospital show page' do
     visit "/hospitals/#{grace.id}"
 
     expect(page).to have_content("Schools Attended by Staff")
-    expect(page).to have_content("Stanford Univeristy")
     expect(page).to have_content("Boston University")
+    expect(page).to have_content("Stanford University")
 
     visit "/hospitals/#{tacoma.id}"
 
     expect(page).to have_content("Schools Attended by Staff")
-    expect(page).to have_content("Bostom Univeristy")
+    expect(page).to have_content("Boston University")
     expect(page).to have_content("Brown University")
     expect(page).to have_content("Doctor University")
+    save_and_open_page
   end
 end
