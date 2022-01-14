@@ -5,7 +5,7 @@ RSpec.describe Hospital do
     it { should have_many(:doctors) }
   end
 
-  describe 'instance variables' do
+  describe 'instance methods' do
     before(:each) do
       @hospital_1 = Hospital.create!(name: "Grey Sloan Memorial Hospital")
       @hospital_2 = Hospital.create!(name: "St. Mary's Hospital")
