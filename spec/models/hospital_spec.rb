@@ -27,7 +27,7 @@ RSpec.describe Hospital do
       expect(@hospital_2.doctor_count).to eq(4)
     end
 
-    xit 'makes a list of unique universities attended by doctors of the hospital' do
+    it 'makes a list of unique universities attended by doctors of the hospital' do
       expect(@hospital_1.unique_universities).to eq(["University 1", "University 2", "University 3"])
       expect(@hospital_2.unique_universities).to eq(["University 4", "University 5"])
     end
