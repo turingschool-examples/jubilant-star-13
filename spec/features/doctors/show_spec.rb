@@ -18,7 +18,7 @@ RSpec.describe 'Doctors Show Page' do
     @doctor_1.patients << @patient_2
     @doctor_1.patients << @patient_3
 
-    visit doctor_path(@doctor_1)
+    visit doctor_path(@doctor_1.id)
   end
 
   scenario 'visitor sees all doctors information' do
@@ -44,5 +44,13 @@ RSpec.describe 'Doctors Show Page' do
     expect(page).to have_content(@patient_2.name)
     expect(page).to have_content(@patient_3.name)
     expect(page).to_not have_content(@patient_4.name)
+  end
+
+  scenario 'visitor sees button to remove patient from doctor caseload next to each patient name' do
+    expect(page).to have_content(@patient_1.name)
+
+    click_button 'Remove Patient'
+    expect(current_path).to eq(doctor_path(@doctor_1.id))
+    expect(page).to_not have_content(@patient_1.name)
   end
 end

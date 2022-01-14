@@ -20,7 +20,7 @@ RSpec.describe "Hospital Show Page" do
     @doctor_1.patients << @patient_2
     @doctor_1.patients << @patient_3
 
-    visit hospital_path(@hospital_1)
+    visit hospital_path(@hospital_1.id)
   end
 
   scenario 'visitor sees the hospital name' do
