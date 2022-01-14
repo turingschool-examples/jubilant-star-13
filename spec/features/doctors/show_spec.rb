@@ -31,7 +31,9 @@ describe 'doctor show page' do
   end
 
   it 'I see the names of all of the patients this doctor has' do
-    expect(page).to have_content("Patients: #{@patient1.name} #{@patient2.name} #{@patient3.name}")
+    expect(page).to have_content("Patients: #{@patient1.name}")
+    expect(page).to have_content("#{@patient2.name}")
+    expect(page).to have_content("#{@patient3.name}")
     expect(page).to_not have_content(@patient4.name)
   end
 

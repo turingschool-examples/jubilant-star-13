@@ -5,4 +5,5 @@
 <h4>Works at: <%= @doctor.hospital.name %> </h4>
 <h4>Patients: <%@doctor.patients.each do |patient| %>
   <%= patient.name %>
+  <%= button_to "Remove #{patient.name}", "/doctors/#{@doctor.id}/patients", method: :delete, params: { name: patient.name} %>
 <% end %> </h4>
