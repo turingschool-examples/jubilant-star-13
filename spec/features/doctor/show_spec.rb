@@ -24,6 +24,18 @@ describe 'doctor show page' do
     expect(page).to have_content(@patient2.name)
   end
 
-  # add more patients associated w different doctor 
+  it 'removes patient from doctor workload' do
+    within "#doctors_patients" do
+      within "#patient-#{@patient1.id}" do
+        click_button "Remove This Patient"
+      end
+    end
+    expect(current_path).to eq(doctor_path(@bailey))
+    save_and_open_page
+    expect(page).not_to have_content(@patient1.name)
+    expect(page).to have_content(@patient2.name)
+  end
+
+  # add more patients associated w different doctor
   # for more robust testing after complete other stories
 end
