@@ -1,2 +1,8 @@
 <h1><%= @hosp.name %> Page</h1>
 <h2>Number of Doctors: <%= @hosp.doctor_count %></h2>
+<h2>Doctors Attended Univerisities:</h2>
+<ul>
+  <% @hosp.uniq_universities.each do |uni| %>
+    <li><%= uni %></li>
+  <% end %>
+</ul>
