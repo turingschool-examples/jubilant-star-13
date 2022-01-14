@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Doctor Show Page', type: :feature do
   let!(:hospital_1) {Hospital.create!(name: "St. Mary's")}
+  
   let!(:doctor_1) {hospital_1.doctors.create!(name: "Grey Bones", specialty: "OB/GYN", university: "Vanderbilt Medical School")}
   let!(:doctor_2) {hospital_1.doctors.create!(name: "Dr. House", specialty: "Psychology", university: "Yale Medical")}
 
@@ -37,14 +38,4 @@ RSpec.describe 'Doctor Show Page', type: :feature do
       expect(page).to have_no_content(patient_4.name)
     end
   end
-
-
-  # As a visitor
-  # When I visit a doctor's show page
-  # I see all of that doctor's information including:
-  #  - name
-  #  - specialty
-  #  - university where they got their doctorate
-  # And I see the name of the hospital where this doctor works
-  # And I see the names of all of the patients this doctor has
 end
