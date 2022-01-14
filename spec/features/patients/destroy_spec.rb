@@ -30,7 +30,7 @@ RSpec.describe "Doctor show page" do
 
     expect(page).to have_content(@p1.name)
 
-    within "#patient-#{@p1.id}" do
+    within("#patient-#{@p1.id}") do
       click_button "Remove Patient"
     end
 
