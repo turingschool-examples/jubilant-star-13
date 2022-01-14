@@ -4,6 +4,4 @@ Rails.application.routes.draw do
   patch '/doctors/:id/:patient_id', to: 'doctors#update'
 
   get '/hospitals/:id', to: 'hospitals#show'
-
-
 end
