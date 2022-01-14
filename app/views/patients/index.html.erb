@@ -1,0 +1,9 @@
+<h1>Patients Index</h1>
+
+<ul>
+  <% @patients.order_youngest_to_oldest.each do |patient| %>
+  <div id="patient<%= patient.id %>">
+    <li>Name: <%= patient.name %> <br>Age: <%= patient.age %></li>
+  </div>
+  <% end %>
+</ul>
