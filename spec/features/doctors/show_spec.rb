@@ -33,5 +33,6 @@ RSpec.describe 'Doctor Show Page' do
 
     expect(current_path).to eq("/doctors/#{@bailey.id}")
     expect(page).to_not have_content("Drew Jones")
+    expect(@drew.name).to eq("Drew Jones")
   end
 end
