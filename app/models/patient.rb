@@ -7,4 +7,8 @@ class Patient < ApplicationRecord
 
     record.id
   end
+
+  def self.order_youngest_to_oldest
+    order(:age)
+  end
 end
