@@ -13,6 +13,6 @@
 <% @doctor.patients.each do |patient| %>
   <div id="patient-<%= patient.id %>">
     <p><%= patient.name %>
-    <%= button_to "Remove This Patient", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete %></p>
+    <%= button_to "Remove This Patient", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete, params: { patient_id: patient.id, doctor_id: @doctor.id} %></p>
   </div>
 <% end %>

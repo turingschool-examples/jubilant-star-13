@@ -3,10 +3,13 @@ require 'rails_helper'
 describe 'doctor show page' do
   before do
     @hospital = Hospital.create!(name: "Grey Sloan Memorial Hospital")
+    
     @bailey = @hospital.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
 
     @patient1 = Patient.create!(name: "Grace", age: 14)
     @patient2 = Patient.create!(name: "Ian", age: 47)
+
+    @not_baileys_patient1 = Patient.create!
 
     @bailey_patient1 = PatientDoctor.create!(doctor_id: @bailey.id, patient_id: @patient1.id)
     @bailey_patient2 = PatientDoctor.create!(doctor_id: @bailey.id, patient_id: @patient2.id)
