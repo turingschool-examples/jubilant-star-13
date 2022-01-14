@@ -12,6 +12,7 @@ RSpec.describe 'Doctors Show Page' do
     @patient_1 = Patient.create!(name: "George O'Malley", age: 35)
     @patient_2 = Patient.create!(name: "Mark Zuckerburg", age: 45)
     @patient_3 = Patient.create!(name: "Jeremy Johnson", age: 23)
+    @patient_4 = Patient.create!(name: "Miranda Lambert", age: 40)
 
     @doctor_1.patients << @patient_1
     @doctor_1.patients << @patient_2
@@ -35,8 +36,13 @@ RSpec.describe 'Doctors Show Page' do
   end
 
   scenario 'visitor sees name of hospital where doctor works' do
+    expect(page).to have_content(@hospital_1.name)
   end
 
   scenario 'visitor sees names of all patients associated with doctor' do
+    expect(page).to have_content(@patient_1.name)
+    expect(page).to have_content(@patient_2.name)
+    expect(page).to have_content(@patient_3.name)
+    expect(page).to_not have_content(@patient_4.name)
   end
 end
