@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :patient do
-    name { "MyString" }
-    age { 1 }
+    name { "Default Patient Name" }
+    age { 17 }
 
     factory :patient_with_doctor do
 
