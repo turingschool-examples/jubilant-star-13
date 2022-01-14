@@ -45,7 +45,6 @@ RSpec.describe "doctors show page" do
 
         expect(page).to have_button("Remove #{sarah.name}")
         click_button "Remove #{sarah.name}"
-        save_and_open_page
 
         expect(current_path).to eq(hospital_doctor_path(three_sisters.id, samantha.id))
       end 
