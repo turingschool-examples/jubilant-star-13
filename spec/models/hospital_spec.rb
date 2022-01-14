@@ -24,11 +24,11 @@ RSpec.describe Hospital do
 
   describe 'instance methods' do 
     it 'returns the number of doctors that work in a hospital' do 
-      expect(hospital_1.doctor_count).to eq(2)
+      expect(hospital_1.doctor_count).to eq(3)
     end
 
     it 'returns a unique list of universities attended by doctors in a hospital' do 
-      expect(hospital_1.unique_university_list).to eq([doctor_1.university, doctor_3.university])
+      expect(hospital_1.unique_university_list).to eq([doctor_3.university, doctor_1.university])
     end 
   end
 end

@@ -50,4 +50,16 @@ RSpec.describe 'doctor show page' do
     expect(page).to_not have_content(patient_3.name)
     expect(page).to_not have_content(patient_4.name)
   end
+
+  it 'can remove a patient from a doctors caseload' do 
+    visit "/doctors/#{doctor_1.id}"
+
+    expect(page).to have_content(patient_1.name)
+
+    click_button "Remove #{patient_1.name}"
+
+    expect(current_path).to eq("/doctors/#{doctor_1.id}")
+    
+    expect(page).to_not have_content(patient_1.name)
+  end
 end

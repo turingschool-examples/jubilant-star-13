@@ -2,5 +2,5 @@
 <h3>Specialty: <%= @doctor.specialty %></h3>
 <h3>University: <%= @doctor.university %></h3>
 <h3>Patients: <% @doctor.patients.each do |patient| %></h3>
-<%= patient.name %>
+<p><%= patient.name %> <%= button_to "Remove #{patient.name}", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete %></p>
 <% end %>
