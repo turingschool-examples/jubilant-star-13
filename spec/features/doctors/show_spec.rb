@@ -28,7 +28,7 @@ describe 'doctor show' do
     end
 
     it 'names of this doctors patients' do
-      within("#patients") do
+      within('#patients') do
         expect(page).to have_content(@our_patient1.name)
         expect(page).to have_content(@our_patient2.name)
         expect(page).to_not have_content(@not_our_patient.name)
