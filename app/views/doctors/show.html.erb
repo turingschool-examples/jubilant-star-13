@@ -1,0 +1,12 @@
+<h1>Doctor <%= "#{@doctor.name}" %></h1>
+
+  Speciality:
+  <%= @doctor.specialty %><br>
+  University:
+  <%= @doctor.university %><br>
+  Hospital:
+  <%= @doctor.hospital.name %><br>
+  Patients:
+  <% @doctor.patients.each do |patient| %>
+    <%= patient.name %><br>
+  <% end %>
