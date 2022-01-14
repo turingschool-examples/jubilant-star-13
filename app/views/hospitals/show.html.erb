@@ -1,0 +1,8 @@
+<h3>Here is info about this Hospital</h3>
+
+<p>Number of Doctors: <%= @hospital.doctors.count %></p>
+
+<p>Universities our Doctors have attended:</p>
+<% @hospital.unique_universities.each do |university| %>
+  <%= university %>
+<% end %>

@@ -1,6 +1,29 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/spec/features/hospitals/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/spec/models/doctor_patient_spec.rb": {
         "lines": [
           1,
@@ -39,6 +62,7 @@
           2,
           2,
           null,
+          null,
           null
         ]
       },
@@ -60,6 +84,20 @@
           1,
           2,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -67,6 +105,13 @@
         "lines": [
           1,
           1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -106,8 +151,18 @@
           1,
           null
         ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/app/controllers/hospitals_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1642179485
+    "timestamp": 1642181962
   }
 }
