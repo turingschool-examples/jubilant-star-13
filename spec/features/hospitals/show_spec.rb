@@ -13,7 +13,7 @@ RSpec.describe 'Hospitals Show Page' do
 
   describe 'when I visit the Hospital Show Page' do
     it 'has the hospitals name' do
-      expect(page).to have_content(@hospital1.name)
+      expect(page).to have_content("Hospital Name: #{@hospital1.name}")
     end
 
     it 'has the number of doctors that work at this hospital' do
