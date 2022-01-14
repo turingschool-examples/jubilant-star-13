@@ -6,13 +6,13 @@ RSpec.describe 'doctor show page' do
   let!(:bailey) {Doctor.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University", hospital: grace)}
   let!(:merideth) {Doctor.create!(name: "Merideth Grey", specialty: "General Surgery", university: "Boston University", hospital: grace)}
 
-  let(:denny) {Patient.create!(name: "Denny Duquette", age: 39)}
-  let(:bob) {Patient.create!(name: "Bob Duquette", age: 44)}
-  let(:larry) {Patient.create!(name: "Larry Duquette", age: 27)}
+  let!(:denny) {Patient.create!(name: "Denny Duquette", age: 39)}
+  let!(:bob) {Patient.create!(name: "Bob Duquette", age: 44)}
+  let!(:larry) {Patient.create!(name: "Larry Duquette", age: 27)}
 
-  let(:jeff) {Patient.create!(name: "Jeff Individual", age: 39)}
-  let(:george) {Patient.create!(name: "George Individual", age: 44)}
-  let(:hal) {Patient.create!(name: "Hal Individual", age: 27)}
+  let!(:jeff) {Patient.create!(name: "Jeff Individual", age: 39)}
+  let!(:george) {Patient.create!(name: "George Individual", age: 44)}
+  let!(:hal) {Patient.create!(name: "Hal Individual", age: 27)}
 
   before :each do
     DoctorPatient.create!(doctor: bailey, patient: denny)
