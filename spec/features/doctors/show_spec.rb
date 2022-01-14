@@ -90,6 +90,8 @@ RSpec.describe 'doctor show page' do
       expect(current_path).to eq("/doctors/#{bailey.id}")
     end
     expect(page).to_not have_content("Denny Duquette")
+    expect(page).to have_content("Bob Duquette")
+    expect(page).to have_content("Larry Duquette")
 
     visit "/doctors/#{merideth.id}"
 
@@ -100,5 +102,7 @@ RSpec.describe 'doctor show page' do
       expect(current_path).to eq("/doctors/#{merideth.id}")
     end
     expect(page).to_not have_content("Jeff Individual")
+    expect(page).to have_content("George Individual")
+    expect(page).to have_content("Hal Individual")
   end
 end
