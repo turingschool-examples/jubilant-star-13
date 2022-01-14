@@ -2,7 +2,7 @@ class Hospital < ApplicationRecord
   has_many :doctors
 
   def doctor_count
-    doctors.count
+    doctors.count(:id)
   end
 
   def doctor_educations
