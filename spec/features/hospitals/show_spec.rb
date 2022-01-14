@@ -4,7 +4,7 @@ describe 'hospitals show page' do
   it "I see hospitals name" do
     hosp1 = Hospital.create!(name: 'sacred heart')
     hosp2 = Hospital.create!(name: 'hells pass')
-    visit "/hospitals/#{hosp1.id}"
+    visit hospital_path(hosp1)
 
     expect(page).to have_content(hosp1.name)
     expect(page).to_not have_content(hosp2.name)
@@ -29,6 +29,6 @@ describe 'hospitals show page' do
 
     expect(page).to have_content('u of d', count: 1)
     expect(page).to have_content('wilm u')
-    
+
   end
 end

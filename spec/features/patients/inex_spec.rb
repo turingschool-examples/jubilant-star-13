@@ -9,5 +9,7 @@ describe 'patients index page' do
 
     expect(patient3.name).to appear_before(patient1.name)
     expect(patient1.name).to appear_before(patient2.name)
+
+    
   end
 end
