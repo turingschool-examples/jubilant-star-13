@@ -33,16 +33,16 @@ RSpec.describe 'hospital show page' do
     expect(page).to have_content("Number of Doctors employed: 4")
   end
 
-  xit 'lits the unique universities that its doctors have attended' do
+  it 'lits the unique universities that its doctors have attended' do
     visit "/hospitals/#{grace.id}"
 
-    expect(page).to have_content("Schools attended by Staff")
+    expect(page).to have_content("Schools Attended by Staff")
     expect(page).to have_content("Stanford Univeristy")
     expect(page).to have_content("Boston University")
 
     visit "/hospitals/#{tacoma.id}"
 
-    expect(page).to have_content("Schools attended by Staff")
+    expect(page).to have_content("Schools Attended by Staff")
     expect(page).to have_content("Bostom Univeristy")
     expect(page).to have_content("Brown University")
     expect(page).to have_content("Doctor University")
