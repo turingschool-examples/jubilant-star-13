@@ -16,7 +16,6 @@ describe 'patient deleted' do
     within "#doctors_patients" do
       within "#patient-#{@patient1.id}" do
         click_button("Remove This Patient")
-        save_and_open_page
       end
     end
     expect(current_path).to eq(doctor_path(@bailey))
