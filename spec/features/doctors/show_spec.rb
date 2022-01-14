@@ -7,6 +7,8 @@ RSpec.describe 'Doctor Show Page' do
     @bailey = @hospital.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
     @drew = Patient.create!(name: "Drew Jones", age: 30)
     @anne = Patient.create!(name: "Anne Brady", age: 50)
+    @jordy = Patient.create!(name: "Brody Jordy", age: 15)
+    @isthmus = Patient.create!(name: "Isthmus von Iris", age: 5)
 
     @patient_doctor = PatientDoctor.create!(doctor_id: @bailey.id, patient_id: @drew.id)
     @patient_doctor = PatientDoctor.create!(doctor_id: @bailey.id, patient_id: @anne.id)
@@ -20,8 +22,11 @@ RSpec.describe 'Doctor Show Page' do
     expect(page).to have_content(@bailey.university)
 
     expect(page).to have_content(@hospital.name)
+
     expect(page).to have_content(@drew.name)
     expect(page).to have_content(@anne.name)
+    expect(page).to_not have_content(@jordy.name)
+    expect(page).to_not have_content(@isthmus.name)
   end
 
   it 'can remove a patient from a doctor' do

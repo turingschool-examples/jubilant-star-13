@@ -5,7 +5,7 @@ class PatientDoctorsController < ApplicationController
     pat_id = doctor_patient_params[:patient_id]
 
     PatientDoctor.where(doctor_id: doc_id, patient_id: pat_id).first.destroy
-  
+
     redirect_to "/doctors/#{doc_id}"
   end
 

@@ -21,6 +21,9 @@ RSpec.describe 'the hospital show page' do
     expect(page).to have_content("Number of Doctors: 4")
     expect(page).to have_content("Stanford University")
     expect(page).to have_content("University of Washington")
+
+    expect(page).to_not have_content("Stanford University").twice
+    expect(page).to_not have_content("University of Washington").twice
   end
 
 end

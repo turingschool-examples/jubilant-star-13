@@ -11,7 +11,7 @@ RSpec.describe 'the patients show page' do
 
   it 'lists patients by age, old to young' do
     visit '/patients'
-save_and_open_page
+
     expect(@anne.name).to appear_before(@drew.name)
     expect(@drew.name).to appear_before(@jordy.name)
     expect(@jordy.name).to appear_before(@isthmus.name)
