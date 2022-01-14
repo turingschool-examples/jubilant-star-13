@@ -5,7 +5,7 @@ RSpec.describe Hospital do
     it { should have_many(:doctors) }
     it { should have_many(:patients).through(:doctors) }
   end
-  describe 'models' do
+  describe 'methods' do
     before(:each) do
       @hospital_1 = Hospital.create!(name: "Grey Sloan Memorial Hospital")
 
