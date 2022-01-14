@@ -35,6 +35,5 @@ RSpec.describe "Hospital Show Page" do
   scenario 'visitor sees a unique list of unviersities that its doctors attended' do
     expect(page).to have_content("Stanford University")
     expect(page).to have_content("Johns Hopkins")
-    save_and_open_page
   end
 end

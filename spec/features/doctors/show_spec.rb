@@ -48,8 +48,8 @@ RSpec.describe 'Doctors Show Page' do
 
   scenario 'visitor sees button to remove patient from doctor caseload next to each patient name' do
     expect(page).to have_content(@patient_1.name)
-
-    click_button 'Remove Patient'
+    
+    click_button "Remove #{@patient_1.name}"
     expect(current_path).to eq(doctor_path(@doctor_1.id))
     expect(page).to_not have_content(@patient_1.name)
   end
