@@ -1,0 +1,88 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/doctor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/spec/models/hospital_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          3,
+          null,
+          3,
+          3,
+          3,
+          3,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/hospital.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/spec/models/patient_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/patient.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/2mod/final/jubilant-star-13/app/models/doctor_patient.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1642179550
+  }
+}
