@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe DoctorPatient, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_a(:doctor) }
+  it { should have_a(:patient) }
+  it { should have_a(:hospital).through(:doctor) }
 end
