@@ -17,7 +17,7 @@ describe 'doctor show page' do
 
   it "lists doctor info and patient names" do
     visit "/doctors/#{@doctor_1.id}"
-    
+
     expect(page).to have_content("#{@doctor_1.name}")
     expect(page).to have_content("hospital_1")
     expect(page).to have_content("#{@doctor_1.university}")
@@ -25,6 +25,17 @@ describe 'doctor show page' do
     expect(page).to have_content("#{@patient_1.name}")
     expect(page).to have_content("#{@patient_2.name}")
     expect(page).to_not have_content("#{@patient_3.name}")
+  end
+
+  it "lists doctor info and patient names" do
+    visit "/doctors/#{@doctor_1.id}"
+
+    within("#patient-#{@patient_1.id}") do
+      click_button('Remove')
+    end
+
+    expect(current_path).to eq("/doctors/#{@doctor_1.id}")
+    expect(page).to_not have_content(@patient_1.name)
   end
 
 end
