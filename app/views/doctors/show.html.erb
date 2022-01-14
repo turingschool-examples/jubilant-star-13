@@ -1,0 +1,16 @@
+<h1>Doctor Show Page</h1>
+<h3><%= "Name: #{@doctor.name}" %></h3>
+<p><%= "Specialty: #{@doctor.specialty}" %></p>
+<p><%= "University: #{@doctor.university}" %></p>
+
+<div class="hospital">
+  <h3>Hospital</h3>
+  <p><%= "#{@doctor.name} works at #{@doctor.hospital_name}" %></p>
+</div>
+
+<div class="patients">
+  <h3>Patients</h3>
+  <% @doctor.patients.each do |patient|%>
+    <p><%= "Patient Name: #{patient.name}" %></p>
+  <% end %>
+</div>
