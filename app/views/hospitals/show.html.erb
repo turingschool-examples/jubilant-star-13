@@ -1,1 +1,7 @@
 <h1><%= @hospital.name %></h1>
+
+<p>Count of Doctors: <%= @hospital.doctor_count %></p>
+
+<% @hospital.unique_universities.each do |university| %>
+  <p> <%= university %></p>
+<% end  %>
