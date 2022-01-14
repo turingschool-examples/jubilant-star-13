@@ -26,5 +26,7 @@ describe 'hospital show page' do
   it 'does not display different hospital information' do
     expect(page).not_to have_content(@hospital2.name)
     expect(page).not_to have_content(@null_doctor4.university)
-  end 
+  end
+
+  # it (insert some testing for uniqueness here) do 
 end
