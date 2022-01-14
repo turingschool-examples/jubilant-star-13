@@ -18,4 +18,20 @@ RSpec.describe "Doctor Show" do
     expect(page).to have_content(patient1.name)
     expect(page).to have_content(patient2.name)
   end
+
+  it "next to each patients name, there is a button to remove the patient.  button refreshes page and patients name is removed" do
+    hospital = Hospital.create!(name: "Paul's Hospital")
+    doctor = hospital.doctors.create!(name: "Dr. Mike", specialty: "Coding Doctor", university: "Turing")
+    patient1 = Patient.create!(name: "Devin", age: 34)
+    patient2 = Patient.create!(name: "Evan", age: 31)
+    doctor_patient1 = DoctorPatient.create!(doctor_id: doctor.id, patient_id: patient1.id)
+    doctor_patient2 = DoctorPatient.create!(doctor_id: doctor.id, patient_id: patient2.id)
+
+    visit "/doctors/#{doctor.id}"
+
+    expect(page).to have_content("Devin")
+    click_button("Remove #{patient1.name}")
+    expect(current_path).to eq("/doctors/#{doctor.id}")
+    expect(page).to_not have_content("Devin")
+  end
 end
