@@ -93,5 +93,12 @@ RSpec.describe 'Doctor Show Page' do
       expect(page).to have_content(@patient_2.name)
       expect(page).to have_content(@patient_3.name)
     end
+
+    it 'does not delete the patient entirely, only from the specified doctor workload' do
+      visit "/doctors/#{@doctor_2.id}"
+
+      expect(page).to have_content(@patient_1.name)
+      expect(page).to have_content(@patient_2.name)
+    end
   end
 end
