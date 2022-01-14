@@ -1,0 +1,6 @@
+<h3>Here are the patients</h3>
+
+<% @patients.order_age.each do |patient| %>
+  <%= patient.name %>
+  <%= patient.age %>
+<% end %>
