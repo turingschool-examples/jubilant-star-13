@@ -46,6 +46,5 @@ RSpec.describe 'hospital show page' do
     expect(page).to have_content("Boston University")
     expect(page).to have_content("Brown University")
     expect(page).to have_content("Doctor University")
-    save_and_open_page
   end
 end
