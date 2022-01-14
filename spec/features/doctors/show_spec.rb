@@ -49,7 +49,7 @@ RSpec.describe 'doctor show page' do
     expect(page).to have_content("Practices at: Seattle Grace Memorial Hospital")
   end
 
-  xit 'displays the names of all the patients the doctor has' do
+  it 'displays the names of all the patients the doctor has' do
 
     visit "/doctors/#{bailey.id}"
 
