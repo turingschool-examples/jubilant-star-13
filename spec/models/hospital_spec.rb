@@ -10,13 +10,14 @@ RSpec.describe Hospital do
     @general_hospital = Hospital.create!(name: "Slide Park General Hospital")
 
     @bailey = @hospital.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
-    @emerick = @hospital.doctors.create!(name: "Ed Emerick", specialty: "Pediatrics", university: "Stanford")
+    @emerick = @hospital.doctors.create!(name: "Ed Emerick", specialty: "Pediatrics", university: "Stanford University")
     @lagrange = @hospital.doctors.create!(name: "Barnard LaGrange", specialty: "Opthalmology", university: "University of Washington")
+    @bellefort = @hospital.doctors.create!(name: "Bernice Bellefort", specialty: "Internal Medicine", university: "University of Washington")
   end
 
   describe 'instance methods' do
     it '#universities' do
-      expect(@hospital.universities).to eq(["Stanford University", "University of Michigan"])
+      expect(@hospital.universities).to eq(["Stanford University", "University of Washington"])
     end
   end
 end

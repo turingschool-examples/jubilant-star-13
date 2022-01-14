@@ -3,7 +3,7 @@ class Hospital < ApplicationRecord
 
   def universities
     doctors
+    .group(:university)
     .pluck(:university)
-    .uniq!
   end
 end
