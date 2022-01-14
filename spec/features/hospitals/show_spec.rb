@@ -15,5 +15,6 @@ RSpec.describe 'Hospital Show Page' do
     expect(page).to have_content('university1')
     expect(page).to have_content('university2')
     expect(page).to have_content('university3')
+    
   end
 end
