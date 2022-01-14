@@ -91,5 +91,6 @@ RSpec.describe "Doctor show page", type: :feature do
       expect(page).to have_button("Remove #{patient1.name} from Doctor Caseload")
       expect(page).to_not have_button("#{patient2.name}")
     end
+
   end
 end
