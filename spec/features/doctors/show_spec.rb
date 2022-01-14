@@ -65,4 +65,38 @@ RSpec.describe 'doctor show page' do
     expect(page).to have_content("George Individual")
     expect(page).to have_content("Hal Individual")
   end
+
+  it 'displays a button next to each patients name to remove said patient' do
+    visit "/doctors/#{bailey.id}"
+
+    within("#patient_#{denny.id}") do
+      expect(page).to have_button("Remove this Patient")
+    end
+
+    visit "/doctors/#{merideth.id}"
+
+    within("#patient_#{jeff.id}") do
+      expect(page).to have_button("Remove this Patient")
+    end
+  end
+
+  xit 'removes the patient from the workload' do
+    visit "/doctors/#{bailey.id}"
+
+    within("#patient_#{denny.id}") do
+      expect(page).to have_button("Remove this Patient")
+      click_on "Remove this Patient"
+      expect(current_path).to eq("/doctors/#{bailey.id}")
+      expect(page).to_not have_content("Denny Duquette")
+    end
+
+    visit "/doctors/#{merideth.id}"
+
+    within("#patient_#{jeff.id}") do
+      expect(page).to have_button("Remove this Patient")
+      click_on "Remove this Patient"
+      expect(current_path).to eq("/doctors/#{bailey.id}")
+      expect(page).to_not have_content("Jeff Individual")
+    end
+  end
 end
