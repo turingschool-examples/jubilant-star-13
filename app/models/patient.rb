@@ -4,4 +4,9 @@ class Patient < ApplicationRecord
   has_many :hospitals, through: :doctors
 
   validates_presence_of :name, :age
+
+  # Class Methods
+  def self.age_ordered
+    order(age: :desc)
+  end
 end
