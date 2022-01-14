@@ -4,4 +4,9 @@ class Hospital < ApplicationRecord
   has_many :patients, through: :doctor_patients
 
   validates_presence_of :name 
+
+  # Instance Methods
+  def doctor_count
+    doctors.count
+  end
 end
