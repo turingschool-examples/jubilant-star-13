@@ -13,8 +13,10 @@ describe 'hospital show page' do
   it 'displays all hospital information' do
     expect(page).to have_content(@hospital.name)
     # show number of doctors that work at hospital
+    expect(@hospital.doctor_count).to eq(3)
     expect(page).to have_content(@hospital.doctor_count)
     # each university should only appear once
-    expect(page).to have_content(@hospital.universities)
+    expect(page).to have_content("Stanford University")
+    expect(page).to have_content("Colorado Community College")
   end
 end
