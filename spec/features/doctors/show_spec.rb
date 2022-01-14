@@ -2,6 +2,15 @@ require 'rails_helper'
 
 RSpec.describe "Doctor Show Page" do
   it "shows doctor info" do
+    sloans = Hospital.create!({name: "Grey Sloan Memorial Hospital"})
+
+    miranda = sloans.doctors.create!({name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University"})
+
+    visit "/doctors/#{miranda.id}"
+
+    expect(page).to have_content(miranda.name)
+    expect(page).to have_content(miranda.specialty)
+    expect(page).to have_content(miranda.university)
   end
   it "shows the name of their hospital" do
   end
