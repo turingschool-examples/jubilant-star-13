@@ -46,17 +46,31 @@ RSpec.describe "Doctor Show Page" do
     expect(page).to have_content(elvis.name)
     expect(page).to have_content(mandy.name)
     expect(page).to_not have_content(bonnie.name)
+  end
 
+  it "has a button to remove patients from a doctor" do
+    sloans = Hospital.create!({name: "Grey Sloan Memorial Hospital"})
+    other = Hospital.create!({name: "The Other Hospital"})
+
+    miranda = sloans.doctors.create!({name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University"})
+    derrick = sloans.doctors.create!({name: "Derrick Shepard", specialty: "Brain Surgery", university: "Harvard University"})
+
+    denny = miranda.patients.create!({name: "Denny Duquette", age: 39})
+    elvis = miranda.patients.create!({name: "Elvis Presley", age: 49})
+    mandy = miranda.patients.create!({name: "Mandy Moore", age: 49})
+    bonnie = derrick.patients.create!({name: "Bonnie Jones", age: 20})
+
+    visit "/doctors/#{miranda.id}"
+
+    expect(page).to have_content(denny.name)
+
+    within("#patient-#{denny.id}") do
+      click_button "Remove Patient from Caseload"
+    end
+
+    expect(current_path).to eq("/doctors/#{miranda.id}")
+    expect(page).to_not have_content(denny.name)
+    expect(page).to have_content(elvis.name)
+    expect(page).to have_content(mandy.name)
   end
 end
-
-# User Story 3, Remove a Patient from a Doctor
-# ​
-# As a visitor
-# When I visit a Doctor's show page
-# Next to each patient's name, I see a button to remove that patient from that doctor's caseload
-# When I click that button for one patient
-# I'm brought back to the Doctor's show page
-# And I no longer see that patient's name listed
-#
-# NOTE: the patient record should not be deleted entirely

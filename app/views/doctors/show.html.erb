@@ -1,9 +1,11 @@
-<%= @doctor.name %>
-<%= @doctor.specialty %>
-<%= @doctor.university %>
+<h1><%= @doctor.hospital.name %></h1>
+<h3><%= @doctor.name %></h3>
+<p><%= @doctor.specialty %></p>
+<p><%= @doctor.university %></p>
 
-<%= @doctor.hospital.name %>
 
 <% @doctor.patients.each do |patient| %>
-<%= patient.name %>
-<% end %>
+  <section id="patient-<%= patient.id %>">
+  <p><%= patient.name %> <%= button_to "Remove Patient from Caseload", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete %></p>
+  </section>
+  <% end %>
