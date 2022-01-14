@@ -1,0 +1,5 @@
+<p><%= @hospital.name %> </p>
+<p><%= @hospital.number_of_doctors %> doctors</p>
+<p><% @hospital.unique_doctor_universities.each do |u| %>
+  <%= u + ', ' %>
+<% end %></p>
