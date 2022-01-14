@@ -5,4 +5,8 @@ class Hospital < ApplicationRecord
     doctors.count
   end
 
+  def doctors_universities
+    doctors.universities
+  end
+
 end
