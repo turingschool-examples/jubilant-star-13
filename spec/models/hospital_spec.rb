@@ -11,7 +11,7 @@ RSpec.describe Hospital do
     @doctor_3 = Doctor.create!(name: 'Doctor Hash', specialty: 'Doctor Stuff', university: 'Some university', hospital_id: @hospital_1.id)
     @doctor_4 = Doctor.create!(name: 'Doctor Integer', specialty: 'Counting', university: 'Some university', hospital_id: @hospital_1.id)
     @doctor_5 = Doctor.create!(name: 'Doctor String', specialty: 'Orthopedics', university: 'Harvard university', hospital_id: @hospital_2.id)
-    @doctor_6 = Doctor.create!(name: 'Doctor Arrayr', specialty: 'Another Specialty', university: 'Another university', hospital_id: @hospital_2.id)
+    @doctor_6 = Doctor.create!(name: 'Doctor Array', specialty: 'Another Specialty', university: 'Another university', hospital_id: @hospital_2.id)
   end
 
   describe 'relationships' do
