@@ -1,0 +1,85 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/app/models/doctor_patient.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/spec/models/doctor_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/app/models/doctor.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/spec/models/hospital_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/app/models/hospital.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/spec/models/patient_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod2/ICs/jubilant-star-13/app/models/patient.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1642178181
+  }
+}
