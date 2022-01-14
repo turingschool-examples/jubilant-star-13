@@ -84,6 +84,7 @@ RSpec.describe 'doctor show page' do
     visit "/doctors/#{bailey.id}"
 
     within("#patient_#{denny.id}") do
+      expect(page).to have_content("Denny Duquette")
       expect(page).to have_button("Remove Denny Duquette")
       click_on "Remove Denny Duquette"
       expect(current_path).to eq("/doctors/#{bailey.id}")
@@ -93,6 +94,7 @@ RSpec.describe 'doctor show page' do
     visit "/doctors/#{merideth.id}"
 
     within("#patient_#{jeff.id}") do
+      expect(page).to have_content("Jeff Individual")
       expect(page).to have_button("Remove Jeff Individual")
       click_on "Remove Jeff Individual"
       expect(current_path).to eq("/doctors/#{merideth.id}")
