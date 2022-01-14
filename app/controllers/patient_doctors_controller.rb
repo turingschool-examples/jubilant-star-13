@@ -4,9 +4,8 @@ class PatientDoctorsController < ApplicationController
     doc_id = doctor_patient_params[:id]
     pat_id = doctor_patient_params[:patient_id]
 
-    p = PatientDoctor.where(doctor_id: doc_id, patient_id: pat_id)
-    p.first.destroy
-
+    PatientDoctor.where(doctor_id: doc_id, patient_id: pat_id).first.destroy
+  
     redirect_to "/doctors/#{doc_id}"
   end
 
