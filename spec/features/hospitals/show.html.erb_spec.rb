@@ -31,6 +31,12 @@ RSpec.describe 'hospitals/show.html.erb', type: :feature do
       it 'displays the number of doctors that work at the hospital' do
         expect(page).to have_content("Number of Doctors: #{hosp_1.doctor_count}")
       end
+
+      it 'displays unique list of doctors universities' do
+        expect(page).to have_content(doc_1.university, count: 1)
+        expect(page).to have_content(doc_3.university, count: 1)
+        expect(page).to have_no_content(doc_2.university)
+      end
     end
   end
 end
