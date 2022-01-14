@@ -7,7 +7,7 @@ RSpec.describe 'the hospital show page' do
     @general_hospital = Hospital.create!(name: "Slide Park General Hospital")
 
     @bailey = @hospital.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
-    @emerick = @hospital.doctors.create!(name: "Ed Emerick", specialty: "Pediatrics", university: "Univeristy of Michigan")
+    @emerick = @hospital.doctors.create!(name: "Ed Emerick", specialty: "Pediatrics", university: "Stanford")
     @lagrange = @hospital.doctors.create!(name: "Barnard LaGrange", specialty: "Opthalmology", university: "University of Washington")
 
     @sutherland = @general_hospital.doctors.create!(name: "Travis Sutherland", specialty: "Podiatry", university: "University of Hard Knocks")
