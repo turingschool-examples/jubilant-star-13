@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Doctor show page" do
   before :each do
     @h1 = Hospital.create!(name: "Grey Sloan Memorial Hospital")
+    @h2 = Hospital.create!(name: "Black Swan Memorial Hospital")
 
     @d1 = @h1.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
     @d2 = @h1.doctors.create!(name: "Gray Anatomy", specialty: "Plastic Surgery", university: "Doctor University")
@@ -19,7 +20,7 @@ RSpec.describe "Doctor show page" do
     @dp3 = DoctorPatient.create!(doctor: @d1, patient: @p3)
     @dp4 = DoctorPatient.create!(doctor: @d1, patient: @p4)
     @dp5 = DoctorPatient.create!(doctor: @d2, patient: @p1)
-    @dp5 = DoctorPatient.create!(doctor: @d2, patient: @p5)
+    @dp6 = DoctorPatient.create!(doctor: @d2, patient: @p5)
   end
 
   it 'shows all of a doctors information' do
@@ -35,6 +36,7 @@ RSpec.describe "Doctor show page" do
     visit hospital_doctor_path(@h1, @d1)
 
     expect(page).to have_content(@h1.name)
+    expect(page).to_not have_content(@h2.name)
   end
 
   it 'has the name of all the doctors patients' do
