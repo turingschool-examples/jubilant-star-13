@@ -80,7 +80,7 @@ RSpec.describe 'doctor show page' do
     end
   end
 
-  it 'removes the patient from the workload' do
+  it 'removes the patient from the doctors workload' do
     visit "/doctors/#{bailey.id}"
 
     within("#patient_#{denny.id}") do
