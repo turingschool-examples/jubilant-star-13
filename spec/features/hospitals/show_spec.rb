@@ -1,3 +1,14 @@
+require 'rails_helper'
+
+RSpec.describe "Hospital Show Page" do
+  it "shows hospital info" do
+    sloans = Hospital.create!({name: "Grey Sloan Memorial Hospital"})
+
+    visit "/hospitals/#{sloans.id}"
+
+    expect(page).to have_content(sloans.name)
+  end
+end
 # User Story 2, Hospital Show Page
 # ​
 # As a visitor
