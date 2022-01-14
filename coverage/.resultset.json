@@ -424,7 +424,7 @@
         "lines": [
           1,
           1,
-          5,
+          6,
           null,
           null
         ]
@@ -432,6 +432,20 @@
       "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/johnnapier/Turing/mod2/final_exam/jubilant-star-13/app/controllers/doctor_patients_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -445,6 +459,6 @@
         ]
       }
     },
-    "timestamp": 1642181021
+    "timestamp": 1642181291
   }
 }
