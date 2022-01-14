@@ -65,4 +65,31 @@ RSpec.describe "Doctor show page", type: :feature do
 
   end
 
+  it "has a button next to each patient's name to remove that patient from doctor's caseload" do
+
+    hospital1 = Hospital.create!(name: "Grey Sloan Memorial Hospital")
+
+    doctor1 = Doctor.create!(name: "Christina Yang", specialty: "Pediatrics", university: "Yale Medical School", hospital_id: hospital1.id)
+
+    patient1 = Patient.create!(name: "Derek Shepherd", age: 38)
+    doctor1.patients << patient1
+    patient2 = Patient.create!(name: "Henry Collins", age: 40)
+    doctor1.patients << patient2
+
+    visit doctor_path(doctor1)
+    
+    within ".doctor-#{doctor1.id}-patients" do
+      expect(page).to have_button("Remove #{patient1.name} from Doctor Caseload")
+      expect(page).to have_button("Remove #{patient2.name} from Doctor Caseload")
+    end
+
+    click_button "Remove #{patient2.name} from Doctor Caseload"
+
+    expect(current_path).to eq(doctor_path(doctor1))
+    
+    within ".doctor-#{doctor1.id}-patients" do
+      expect(page).to have_button("Remove #{patient1.name} from Doctor Caseload")
+      expect(page).to_not have_button("#{patient2.name}")
+    end
+  end
 end

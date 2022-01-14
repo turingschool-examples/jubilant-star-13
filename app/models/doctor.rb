@@ -5,6 +5,6 @@ class Doctor < ApplicationRecord
   has_many :patients, through: :doctor_patients
 
   def self.universities 
-    select('doctors.university').group(:university).pluck(:university)
+    select('doctors.university').distinct.pluck(:university)
   end
 end
