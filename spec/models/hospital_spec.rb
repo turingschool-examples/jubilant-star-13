@@ -12,8 +12,17 @@ RSpec.describe Hospital do
       francis = hospital.doctors.create!(name: "Francis Scott Key", specialty: "Opthamology", university: "Harvard University")
       jerry = hospital.doctors.create!(name: "Jerry Vanilla", specialty: "Resident Doctor", university: "UCLA Berkley")
       hannah = hospital.doctors.create!(name: "Hannah Fillipo", specialty: "Dermatologist", university: "Stanford University")
-
-      expect(hospital.assoc_universities).to eq(["Stanford University", "Harvard University", "UCLA Berkley"])
+      expected = hospital.assoc_universities.map {|doctor| doctor.university}
+      expect(expected).to eq(["Harvard University", "Stanford University", "UCLA Berkley"])
     end
-  end 
+
+    it '#doctor_count' do
+      hospital = Hospital.create!(name: "Grey Sloan Memorial Hospital")
+      bailey = hospital.doctors.create!(name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University")
+      francis = hospital.doctors.create!(name: "Francis Scott Key", specialty: "Opthamology", university: "Harvard University")
+      jerry = hospital.doctors.create!(name: "Jerry Vanilla", specialty: "Resident Doctor", university: "UCLA Berkley")
+
+      expect(hospital.doctor_count).to eq 3
+    end 
+  end
 end
