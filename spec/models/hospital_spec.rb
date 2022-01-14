@@ -31,5 +31,11 @@ RSpec.describe Hospital do
         expect(@hospital_1.total_doctors).to eq(3)
       end
     end
+
+    describe '#doctor_universities' do
+      it 'uniquely lists unviersities that its doctors attended' do
+        expect(@hospital_1.doctor_universities).to eq(["Johns Hopkins", "Stanford University"])
+      end
+    end
   end
 end
